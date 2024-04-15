@@ -79,10 +79,6 @@ const genres = [
   `Children's Books`,
 ];
 
-function getRandomName() {
-  return `${faker.word.adjective()} ${faker.word.noun()}`;
-}
-
 function insertGenres() {
   let sql = genres.map((item) => "(?)").join(", ");
   db.prepare(`INSERT INTO genres (genre) VALUES ${sql}`).run(...genres);
@@ -119,4 +115,4 @@ function startDB() {
   insertUsers();
 }
 
-startDB();
+// startDB();
