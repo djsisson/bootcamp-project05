@@ -23,7 +23,7 @@ function createTables() {
         book_id INTEGER PRIMARY KEY,
         title TEXT NOT NULL,
         author TEXT NOT NULL,
-        genre_id INTEGER REFERENCES gemre (genre_id)
+        genre_id INTEGER REFERENCES genres (genre_id)
                 ON UPDATE RESTRICT
                 ON DELETE RESTRICT,
         imglink TEXT,
@@ -115,4 +115,4 @@ function startDB() {
   insertUsers();
 }
 
-// startDB();
+startDB();

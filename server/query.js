@@ -128,7 +128,7 @@ function getBookById(book_id) {
   try {
     const book = db
       .prepare(
-        "SELECT b.*, round(avg(r.rating), 2) rating FROM books as b INNER JOIN reviews as r ON b.book_id = r.book_id WHERE book_id = (?) GROUP BY b.book_id"
+        "SELECT b.*, round(avg(r.rating), 2) rating FROM books as b LEFT JOIN reviews as r ON b.book_id = r.book_id WHERE b.book_id = (?) GROUP BY b.book_id"
       )
       .all(book_id)[0];
     return book;
@@ -141,7 +141,7 @@ function getBooksByGenre(genre_id) {
   try {
     const books = db
       .prepare(
-        "SELECT b.*, round(avg(r.rating), 2) rating FROM books as b INNER JOIN reviews as r ON b.book_id = r.book_id WHERE genre_id = (?) GROUP BY b.book_id"
+        "SELECT b.*, round(avg(r.rating), 2) rating FROM books as b LEFT JOIN reviews as r ON b.book_id = r.book_id WHERE genre_id = (?) GROUP BY b.book_id"
       )
       .all(genre_id);
     return books;
@@ -154,9 +154,9 @@ function getBooksBySearch(search) {
   try {
     const books = db
       .prepare(
-        "SELECT b.*, round(avg(r.rating), 2) rating FROM books as b INNER JOIN reviews as r ON b.book_id = r.book_id WHERE title LIKE %(?)% OR author LIKE %(?)% GROUP BY b.book_id"
+        "SELECT b.*, round(avg(r.rating), 2) rating FROM books as b LEFT JOIN reviews as r ON b.book_id = r.book_id WHERE title LIKE (?) OR author LIKE (?) GROUP BY b.book_id"
       )
-      .all(search);
+      .all(`%${search}%`,`%${search}%`);
     return books;
   } catch (error) {
     throw error;
