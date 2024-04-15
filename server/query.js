@@ -22,22 +22,114 @@ function getUser(user_id) {
   }
 }
 
-function newUser(name, age, email) {}
+function newUser(user) {
+  const newUser = db.prepare(
+    `INSERT INTO users (name, age, email) VALUES (@name, @age, @email)`
+  );
+  try {
+    const trans = db
+      .transaction((x) => {
+        const test = newUser.run(user);
+        return test;
+      })
+      .apply();
+    return db
+      .prepare("SELECT * FROM users where user_id = (?)")
+      .all(trans.lastInsertRowid)[0];
+  } catch (error) {
+    throw error;
+  }
+}
 
-function deleteUser(user_id) {}
+function deleteUser(user_id) {
+  const user = db.prepare("DELETE FROM users WHERE user_id = (?)");
+  try {
+    const trans = db
+      .transaction(() => {
+        const test = user.run(user_id);
+        return test;
+      })
+      .apply();
+    return trans;
+  } catch (error) {
+    throw error;
+  }
+}
 
-function updateUser(userid, user) {}
+function updateUser(user) {
+  const updateUser = db.prepare(
+    "UPDATE users SET name = (@name), age = (@age), email = (@email) WHERE user_id = (@userid)"
+  );
+  try {
+    const trans = db
+      .transaction(() => {
+        const test = updateUser.run(user);
+        return test;
+      })
+      .apply();
+    return trans;
+  } catch (error) {
+    throw error;
+  }
+}
 
-function addBook(title, genre, author, imglink, summary) {}
+function addBook(book) {
+  const newBook = db.prepare(
+    `INSERT INTO books (title, author, genre_id, imglink, summary) VALUES (@title, @author, @genreid, @imglink, @summary)`
+  );
+  try {
+    const trans = db
+      .transaction((x) => {
+        const test = newBook.run(book);
+        return test;
+      })
+      .apply();
+    return db
+      .prepare("SELECT * FROM books where book_id = (?)")
+      .all(trans.lastInsertRowid)[0];
+  } catch (error) {
+    throw error;
+  }
+}
 
-function updateBook() {}
+function updateBook(book) {
+  const updateBook = db.prepare(
+    "UPDATE books SET title = (@title), author = (@author), genre_id = (@genreid), imglink = (@imglink), summary = (@summary) WHERE book_id = (@bookid)"
+  );
+  try {
+    const trans = db
+      .transaction(() => {
+        const test = updateBook.run(book);
+        return test;
+      })
+      .apply();
+    return trans;
+  } catch (error) {
+    throw error;
+  }
+}
 
-function deleteBook() {}
+function deleteBook(book_id) {
+  const book = db.prepare("DELETE FROM books WHERE book_id = (?)");
+  try {
+    const trans = db
+      .transaction(() => {
+        const test = book.run(book_id);
+        return test;
+      })
+      .apply();
+    return trans;
+  } catch (error) {
+    throw error;
+  }
+}
 
 function getBookById(book_id) {
   try {
     const book = db
-      .prepare("SELECT * FROM books WHERE book_id = (?)")
+      .prepare(
+        "SELECT b.*, round(avg(r.rating), 2) rating FROM books as b INNER JOIN reviews as r ON b.book_id = r.book_id WHERE book_id = (?) GROUP BY b.book_id"
+      )
       .all(book_id)[0];
     return book;
   } catch (error) {
@@ -48,7 +140,9 @@ function getBookById(book_id) {
 function getBooksByGenre(genre_id) {
   try {
     const books = db
-      .prepare("SELECT * FROM books WHERE genre_id = (?)")
+      .prepare(
+        "SELECT b.*, round(avg(r.rating), 2) rating FROM books as b INNER JOIN reviews as r ON b.book_id = r.book_id WHERE genre_id = (?) GROUP BY b.book_id"
+      )
       .all(genre_id);
     return books;
   } catch (error) {
@@ -56,13 +150,69 @@ function getBooksByGenre(genre_id) {
   }
 }
 
-function getBooksBySearch(searcg)
+function getBooksBySearch(search) {
+  try {
+    const books = db
+      .prepare(
+        "SELECT b.*, round(avg(r.rating), 2) rating FROM books as b INNER JOIN reviews as r ON b.book_id = r.book_id WHERE title LIKE %(?)% OR author LIKE %(?)% GROUP BY b.book_id"
+      )
+      .all(search);
+    return books;
+  } catch (error) {
+    throw error;
+  }
+}
 
-function addReview(book_id, user_id, review, rating) {}
+function addReview(review) {
+  const newReview = db.prepare(
+    `INSERT INTO reviews (user_id, book_id, review, rating) VALUES (@userid, @bookid, @review, @rating)`
+  );
+  try {
+    const trans = db
+      .transaction((x) => {
+        const test = newReview.run(review);
+        return test;
+      })
+      .apply();
+    return db
+      .prepare("SELECT * FROM reviews where book_id = (?)")
+      .all(review.book_id);
+  } catch (error) {
+    throw error;
+  }
+}
 
-function updateReview() {}
+function updateReview(review) {
+  const updateReview = db.prepare(
+    "UPDATE reviews SET review = (@review), age = (@rating), WHERE review_id = (@reviewid)"
+  );
+  try {
+    const trans = db
+      .transaction(() => {
+        const test = updateReview.run(review);
+        return test;
+      })
+      .apply();
+    return trans;
+  } catch (error) {
+    throw error;
+  }
+}
 
-function deleteReview() {}
+function deleteReview(review_id) {
+  const review = db.prepare("DELETE FROM reviews WHERE review_id = (?)");
+  try {
+    const trans = db
+      .transaction(() => {
+        const test = review.run(review_id);
+        return test;
+      })
+      .apply();
+    return trans;
+  } catch (error) {
+    throw error;
+  }
+}
 
 function getReviews(book_id) {
   try {
@@ -75,9 +225,41 @@ function getReviews(book_id) {
   }
 }
 
-function addFavourite(user_id, book_id) {}
+function addFavourite(user_id, book_id) {
+  const newFavourite = db.prepare(
+    `INSERT INTO favourites (user_id, book_id) VALUES (? ,?)`
+  );
+  try {
+    const trans = db
+      .transaction((x) => {
+        const test = newFavourite.run(user_id, book_id);
+        return test;
+      })
+      .apply();
+    return db
+      .prepare("SELECT * FROM favourites where user_id = (?)")
+      .all(user_id);
+  } catch (error) {
+    throw error;
+  }
+}
 
-function removeFavourite() {}
+function removeFavourite(favourite_id) {
+  const favourite = db.prepare(
+    "DELETE FROM favourites WHERE favourite_id = (?)"
+  );
+  try {
+    const trans = db
+      .transaction(() => {
+        const test = favourite.run(favourite_id);
+        return test;
+      })
+      .apply();
+    return trans;
+  } catch (error) {
+    throw error;
+  }
+}
 
 function getFavourites(user_id) {
   try {
@@ -108,4 +290,5 @@ export {
   addFavourite,
   removeFavourite,
   getFavourites,
+  getBooksBySearch,
 };
