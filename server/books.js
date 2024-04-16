@@ -798,35 +798,40 @@ const books = [
     author: "Walter Isaacson",
     genreid: "10",
     imglink: "https://productimages.worldofbooks.com/034914043X.jpg",
-    summary: "todo",
+    summary:
+      "Steve Jobs by Walter Isaacson is a comprehensive biography of the iconic co-founder of Apple Inc., Steve Jobs. The book offers insight into Jobs' complex personality, his visionary leadership style, and his revolutionary approach to technology and design. Drawing from interviews with Jobs himself, as well as interviews with family, friends, and colleagues, Isaacson explores Jobs' early life, his rise to prominence in the tech industry, his successes and failures at Apple, and his enduring legacy as one of the most influential figures in modern technology.o",
   },
   {
     title: "Becoming",
     author: "Michelle Obama",
     genreid: "10",
     imglink: "https://productimages.worldofbooks.com/0241982979.jpg",
-    summary: "todo",
+    summary:
+      "Becoming by Michelle Obama is a deeply personal memoir that chronicles the life of the former First Lady of the United States. In the book, Obama reflects on her childhood in Chicago, her experiences as a student, her career as a lawyer and public servant, and her role as a wife and mother. With candor and grace, Obama shares her triumphs and challenges, including her time in the White House alongside her husband, Barack Obama. Through her inspiring journey, Obama encourages readers to embrace their own stories and strive for authenticity, purpose, and resilience.",
   },
   {
     title: "The Diary of a Young Girl",
     author: "Anne Frank",
     genreid: "10",
     imglink: "https://productimages.worldofbooks.com/1407100440.jpg",
-    summary: "todo",
+    summary:
+      "The Diary of a Young Girl by Anne Frank is a poignant and powerful memoir of a young Jewish girl's experience during the Holocaust. Written while Frank and her family were in hiding from the Nazis in Amsterdam, the diary provides a firsthand account of life in hiding, as well as Frank's thoughts, feelings, and dreams. Despite the hardships and dangers she faced, Frank's diary is filled with hope, optimism, and a belief in the goodness of humanity. Through her words, Frank's legacy continues to inspire readers around the world to confront injustice and prejudice and to cherish the values of courage, resilience, and compassion.",
   },
   {
     title: "The Glass Castle",
     author: "Jeannette Walls",
     genreid: "10",
     imglink: "https://productimages.worldofbooks.com/1844081826.jpg",
-    summary: "",
+    summary:
+      "The Glass Castle by Jeannette Walls is a memoir that recounts Walls' unconventional and tumultuous upbringing in a nomadic and impoverished family. With parents who were both brilliant and deeply flawed, Walls and her siblings endured poverty, neglect, and instability as they moved from place to place in search of a better life. Despite the hardships, Walls finds strength and resilience in her own determination to overcome her circumstances and build a better future for herself. Through her candid and vivid storytelling, Walls offers a compelling portrait of resilience, forgiveness, and the enduring power of family bonds.",
   },
   {
     title: "Alexander Hamilton",
     author: "Ron Chernow",
     genreid: "10",
     imglink: "https://productimages.worldofbooks.com/1800244398.jpg",
-    summary: "todo",
+    summary:
+      "Alexander Hamilton by Ron Chernow is a biography of one of America's most influential founding fathers, Alexander Hamilton. Chernow delves into Hamilton's remarkable life, from his humble beginnings as an orphaned immigrant to his rise as a key figure in the American Revolution and the founding of the United States. With his brilliant mind, fierce ambition, and tireless work ethic, Hamilton played a pivotal role in shaping the nation's political and economic systems, including the creation of the U.S. financial system and the drafting of the Constitution. Through meticulous research and vivid storytelling, Chernow offers a comprehensive and illuminating portrait of Hamilton's life, legacy, and lasting impact on American history.todo",
   },
 ];
 
