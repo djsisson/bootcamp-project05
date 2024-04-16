@@ -1,17 +1,17 @@
 const books = [
   {
     title: "The Autobiography of Malcolm X",
-    author: "by Malcolm X and Alex Haley ",
+    author: "Malcolm X and Alex Haley ",
     genreid: "11",
     imglink: "https://productimages.worldofbooks.com/0345350685.jpg",
     summary:
       "The Autobiography of Malcolm X is a powerful and candid memoir that traces the life of Malcolm X, from his tumultuous childhood to his transformation into one of the most influential civil rights leaders in American history. Co-written by Alex Haley, the book offers a firsthand account of Malcolm X's journey from a troubled youth involved in crime to his conversion to Islam while serving time in prison. It delves into his experiences with racism, his time as a prominent figure in the Nation of Islam, and his eventual break with the organization. Through his reflections, Malcolm X shares his evolving beliefs on race, religion, and activism, offering valuable insights into the struggles faced by African Americans during the civil rights era. His autobiography is a compelling narrative of self-discovery, resilience, and the quest for justice.",
-      key:"OL19801148W"
+    key: "OL19801148W",
   },
 
   {
     title: "Long Walk to Freedom",
-    author: "by Nelson Mandela",
+    author: "Nelson Mandela",
     genreid: "11",
     imglink: "https://productimages.worldofbooks.com/0349106533.jpg",
     summary:
@@ -20,7 +20,7 @@ const books = [
 
   {
     title: "My Life",
-    author: "by Bill Clinton",
+    author: "Bill Clinton",
     genreid: "11",
     imglink: "https://productimages.worldofbooks.com/0375414576.jpg",
     summary:
@@ -29,7 +29,7 @@ const books = [
 
   {
     title: "Bossypants",
-    author: "by Tina Fey",
+    author: "Tina Fey",
     genreid: "11",
     imglink: "https://productimages.worldofbooks.com/0751547832.jpg",
     summary:
@@ -38,7 +38,7 @@ const books = [
 
   {
     title: "I Know Why the Caged Bird Sings",
-    author: "by Maya Angelo",
+    author: "Maya Angelo",
     genreid: "11",
     imglink: "https://productimages.worldofbooks.com/1405882654.jpg",
     summary:
@@ -46,7 +46,7 @@ const books = [
   },
   {
     title: "To Kill a Mockingbird",
-    author: "by Harper Lee",
+    author: "Harper Lee",
     genreid: "1",
     imglink: "https://productimages.worldofbooks.com/0099549484.jpg",
     summary:
@@ -55,7 +55,7 @@ const books = [
 
   {
     title: "1984",
-    author: "by George Orwell",
+    author: "George Orwell",
     genreid: "1",
     imglink: "https://productimages.worldofbooks.com/014118776X.jpg",
     summary:
@@ -64,7 +64,7 @@ const books = [
 
   {
     title: "Pride and Prejudice",
-    author: "by Jane Austen",
+    author: "Jane Austen",
     genreid: "1",
     imglink: "https://productimages.worldofbooks.com/2382740663.jpg",
     summary:
@@ -73,7 +73,7 @@ const books = [
 
   {
     title: "The Great Gatsby",
-    author: "by F. Scott Fitzgerald",
+    author: "F. Scott Fitzgerald",
     genreid: "1",
     imglink: "https://productimages.worldofbooks.com/185326041X.jpg",
     summary:
@@ -82,7 +82,7 @@ const books = [
 
   {
     title: "The Catcher in the Rye",
-    author: "by J.D. Salinger",
+    author: "J.D. Salinger",
     genreid: "1",
     imglink: "https://productimages.worldofbooks.com/1603810137.jpg",
     summary:
@@ -91,7 +91,7 @@ const books = [
 
   {
     title: "The Girl on the Train",
-    author: "by Paula Hawkins",
+    author: "Paula Hawkins",
     genreid: "4",
     imglink: "https://productimages.worldofbooks.com/1529176751.jpg",
     summary:
@@ -100,7 +100,7 @@ const books = [
 
   {
     title: "The Bourne Identity",
-    author: "by Robert Ludlum",
+    author: "Robert Ludlum",
     genreid: "4",
     imglink: "https://productimages.worldofbooks.com/1409167860.jpg",
     summary:
@@ -109,7 +109,7 @@ const books = [
 
   {
     title: "The Silent Patient",
-    author: "by Alex Michaelides",
+    author: "Alex Michaelides",
     genreid: "4",
     imglink: "https://productimages.worldofbooks.com/1409181634.jpg",
     summary:
@@ -118,7 +118,7 @@ const books = [
 
   {
     title: "The Woman in the Window",
-    author: "by A.J. Finn ",
+    author: "A.J. Finn ",
     genreid: "4",
     imglink: "https://productimages.worldofbooks.com/194778353X.jpg",
     summary:
@@ -127,7 +127,7 @@ const books = [
 
   {
     title: "The Reversal",
-    author: "by Michael Connelly",
+    author: "Michael Connelly",
     genreid: "4",
     imglink: "https://productimages.worldofbooks.com/1409118304.jpg",
     summary:
@@ -136,7 +136,7 @@ const books = [
 
   {
     title: "The Da Vinci Code",
-    author: "by Dan Brown",
+    author: "Dan Brown",
     genreid: "3",
     imglink: "https://productimages.worldofbooks.com/0141372567.jpg",
     summary:
@@ -145,7 +145,7 @@ const books = [
 
   {
     title: "Gone Girl",
-    author: "by Gillian Flynn",
+    author: "Gillian Flynn",
     genreid: "3",
     imglink: "https://productimages.worldofbooks.com/1780228228.jpg",
     summary:
@@ -154,7 +154,7 @@ const books = [
 
   {
     title: "Murder on the Orient Express",
-    author: "by Agatha Christie",
+    author: "Agatha Christie",
     genreid: "3",
     imglink: "https://productimages.worldofbooks.com/0008226679.jpg",
     summary:
@@ -163,8 +163,8 @@ const books = [
 
   {
     title: "The Silence of the Lambs",
-    author: "by Thomas Harris",
-    genreid: "",
+    author: "Thomas Harris",
+    genreid: "3",
     imglink: "https://productimages.worldofbooks.com/0312924585.jpg",
     summary:
       "The Silence of the Lambs by Thomas Harris features FBI trainee Clarice Starling as she seeks the help of incarcerated cannibalistic serial killer Dr. Hannibal Lecter to catch another serial killer known as Buffalo Bill. As Clarice delves deeper into the twisted mind of Buffalo Bill, she forms a complex relationship with Lecter, leading to a gripping and suspenseful climax.",
@@ -172,7 +172,7 @@ const books = [
 
   {
     title: "The Girl with the Dragon Tattoo",
-    author: "by Stieg Larsson",
+    author: "Stieg Larsson",
     genreid: "3",
     imglink: "https://productimages.worldofbooks.com/1785861735.jpg",
     summary:
@@ -181,7 +181,7 @@ const books = [
 
   {
     title: "Pride and Prejudice",
-    author: "by Jane Austen",
+    author: "Jane Austen",
     genreid: "5",
     imglink: "https://productimages.worldofbooks.com/2382740663.jpg",
     summary:
@@ -190,7 +190,7 @@ const books = [
 
   {
     title: "Outlander",
-    author: "by Diana Gabaldon",
+    author: "Diana Gabaldon",
     genreid: "5",
     imglink: "https://productimages.worldofbooks.com/1784751375.jpg",
     summary:
@@ -199,7 +199,7 @@ const books = [
 
   {
     title: "The Notebook",
-    author: "by Nicholas Sparks",
+    author: "Nicholas Sparks",
     genreid: "5",
     imglink: "https://productimages.worldofbooks.com/0751540471.jpg",
     summary:
@@ -208,7 +208,7 @@ const books = [
 
   {
     title: "Me Before You",
-    author: "by Jojo Moyes",
+    author: "Jojo Moyes",
     genreid: "5",
     imglink: "https://productimages.worldofbooks.com/B0065GC0BA.jpg",
     summary:
@@ -217,7 +217,7 @@ const books = [
 
   {
     title: "The Rosie Project",
-    author: "by Graeme Simsion",
+    author: "Graeme Simsion",
     genreid: "5",
     imglink: "https://productimages.worldofbooks.com/1405912790.jpg",
     summary:
@@ -226,7 +226,7 @@ const books = [
 
   {
     title: "Dune",
-    author: "by Frank Herbert",
+    author: "Frank Herbert",
     genreid: "6",
     imglink: "https://productimages.worldofbooks.com/1529347858.jpg",
     summary:
@@ -235,7 +235,7 @@ const books = [
 
   {
     title: "The Hitchhiker's Guide to the Galaxy",
-    author: "by Douglas Adams",
+    author: "Douglas Adams",
     genreid: "6",
     imglink: "https://productimages.worldofbooks.com/1529034523.jpg",
     summary:
@@ -244,7 +244,7 @@ const books = [
 
   {
     title: "Ender's Game",
-    author: "by Orson Scott Card",
+    author: "Orson Scott Card",
     genreid: "6",
     imglink: "https://productimages.worldofbooks.com/0356500845.jpg",
     summary:
@@ -253,7 +253,7 @@ const books = [
 
   {
     title: "Neuromancer",
-    author: "by William Gibson",
+    author: "William Gibson",
     genreid: "6",
     imglink: "https://productimages.worldofbooks.com/1473217385.jpg",
     summary:
@@ -262,7 +262,7 @@ const books = [
 
   {
     title: "The Martian",
-    author: "by Andy Weir",
+    author: "Andy Weir",
     genreid: "6",
     imglink: "https://productimages.worldofbooks.com/1785031139.jpg",
     summary:
@@ -271,7 +271,7 @@ const books = [
 
   {
     title: "The Hobbit",
-    author: "by J.R.R. Tolkien",
+    author: "J.R.R. Tolkien",
     genreid: "7",
     imglink: "https://productimages.worldofbooks.com/0345534832.jpg",
     summary:
@@ -280,7 +280,7 @@ const books = [
 
   {
     title: "Harry Potter and the Sorcerer's Stone",
-    author: "by J.K. Rowling",
+    author: "J.K. Rowling",
     genreid: "7",
     imglink: "https://productimages.worldofbooks.com/059035342X.jpg",
     summary:
@@ -289,7 +289,7 @@ const books = [
 
   {
     title: "A Game of Thrones",
-    author: "by George R.R. Martin",
+    author: "George R.R. Martin",
     genreid: "7",
     imglink: "https://productimages.worldofbooks.com/0007428545.jpg",
     summary:
@@ -298,7 +298,7 @@ const books = [
 
   {
     title: "The Name of the Wind",
-    author: "by Patrick Rothfuss",
+    author: "Patrick Rothfuss",
     genreid: "7",
     imglink: "https://productimages.worldofbooks.com/0575081406.jpg",
     summary:
@@ -306,7 +306,7 @@ const books = [
   },
   {
     title: "Mistborn: The Final Empire",
-    author: "by Brandon Sanderson",
+    author: "Brandon Sanderson",
     genreid: "7",
     imglink: "https://productimages.worldofbooks.com/1250318548.jpg",
     summary:
@@ -314,7 +314,7 @@ const books = [
   },
   {
     title: "The Book Thief",
-    author: "by Markus Zusak",
+    author: "Markus Zusak",
     genreid: "8",
     imglink: "https://productimages.worldofbooks.com/1909531618.jpg",
     summary:
@@ -322,7 +322,7 @@ const books = [
   },
   {
     title: "All the Light We Cannot See",
-    author: "by Anthony Doerr ",
+    author: "Anthony Doerr ",
     genreid: "8",
     imglink: "https://productimages.worldofbooks.com/0008548358.jpg",
     summary:
@@ -330,31 +330,31 @@ const books = [
   },
   {
     title: "The Nightingale",
-    author: "by Kristin Hannah",
-    genreid: "",
+    author: "Kristin Hannah",
+    genreid: "8",
     imglink: "https://productimages.worldofbooks.com/1509848622.jpg",
     summary:
       "The Nightingale by Kristin Hannah is a historical fiction novel set in Nazi-occupied France during World War II. It follows the lives of two sisters, Vianne and Isabelle Mauriac, who take different paths to resist the German occupation. While Vianne tries to protect her family and survive under the watchful eye of the enemy, Isabelle joins the French Resistance and risks her life to save others. The novel explores themes of courage, sacrifice, and the bonds of sisterhood.",
   },
   {
     title: "The Underground Railroad",
-    author: "by Colson Whitehead ",
-    genreid: "",
+    author: "Colson Whitehead ",
+    genreid: "8",
     imglink: "https://productimages.worldofbooks.com/0349726809.jpg",
     summary:
       "The Underground Railroad by Colson Whitehead is a Pulitzer Prize-winning novel that reimagines the historical Underground Railroad as a literal network of underground railways and tunnels used by escaped slaves to flee to freedom in the antebellum South. The story follows Cora, a young slave on a Georgia plantation, as she embarks on a perilous journey northward, pursued by a relentless slave catcher. Through Cora's odyssey, the novel explores themes of race, freedom, and the legacy of slavery in America.",
   },
   {
     title: "The Tattooist of Auschwitz",
-    author: "by Heather Morris",
-    genreid: "",
+    author: "Heather Morris",
+    genreid: "8",
     imglink: "https://productimages.worldofbooks.com/1785763679.jpg",
     summary:
       "The Tattooist of Auschwitz by Heather Morris is a novel based on the true story of Lale Sokolov, a Slovakian Jew who was imprisoned in the Auschwitz-Birkenau concentration camp during World War II. As the camp's tattooist, Lale is responsible for marking the arms of incoming prisoners with identification numbers. Amidst the horrors of the Holocaust, Lale falls in love with Gita, a fellow prisoner, and risks his life to ensure their survival. The novel portrays the resilience of the human spirit in the face of unimaginable suffering.",
   },
   {
     title: "Dracula",
-    author: "by Bram Stoker",
+    author: "Bram Stoker",
     genreid: "9",
     imglink: "https://productimages.worldofbooks.com/1326621793.jpg",
     summary:
@@ -362,7 +362,7 @@ const books = [
   },
   {
     title: "The Shining",
-    author: "by Stephen King",
+    author: "Stephen King",
     genreid: "9",
     imglink: "https://productimages.worldofbooks.com/147369549X.jpg",
     summary:
@@ -370,7 +370,7 @@ const books = [
   },
   {
     title: "Frankenstein",
-    author: "by Mary Shelley",
+    author: "Mary Shelley",
     genreid: "9",
     imglink: "https://productimages.worldofbooks.com/0141439475.jpg",
     summary:
@@ -378,7 +378,7 @@ const books = [
   },
   {
     title: "Bird Box",
-    author: "by Josh Malerman ",
+    author: "Josh Malerman ",
     genreid: "9",
     imglink: "https://productimages.worldofbooks.com/000831974X.jpg",
     summary:
@@ -386,15 +386,15 @@ const books = [
   },
   {
     title: "It",
-    author: "by Stephen King",
-    genreid: "",
+    author: "Stephen King",
+    genreid: "9",
     imglink: "https://productimages.worldofbooks.com/1444707868.jpg",
     summary:
       "It by Stephen King is a horror novel that follows a group of childhood friends who reunite as adults to confront a terrifying entity that has haunted their hometown of Derry, Maine, for centuries. The entity, known as Pennywise the Dancing Clown, preys on the fears of its victims and feeds on the town's children. As the friends confront their past traumas and face their greatest fears, they must band together to defeat the evil lurking beneath Derry. The novel explores themes of friendship, courage, and the power of memory.",
   },
   {
     title: "Educated",
-    author: "by Tara Westover ",
+    author: "Tara Westover ",
     genreid: "12",
     imglink: "https://productimages.worldofbooks.com/1786330512.jpg",
     summary:
@@ -402,7 +402,7 @@ const books = [
   },
   {
     title: "Hillbilly Elegy",
-    author: "by J.D. Vance",
+    author: "J.D. Vance",
     genreid: "12",
     imglink: "https://productimages.worldofbooks.com/802220885X.jpg",
     summary:
@@ -410,7 +410,7 @@ const books = [
   },
   {
     title: "The Year of Magical Thinking",
-    author: "by Joan Didion",
+    author: "Joan Didion",
     genreid: "12",
     imglink: "https://productimages.worldofbooks.com/0007270747.jpg",
     summary:
@@ -418,7 +418,7 @@ const books = [
   },
   {
     title: "Eat, Pray, Love",
-    author: "by Elizabeth Gilbert",
+    author: "Elizabeth Gilbert",
     genreid: "12",
     imglink: "https://productimages.worldofbooks.com/1408881446.jpg",
     summary:
@@ -427,7 +427,7 @@ const books = [
 
   {
     title: "Wild",
-    author: "by Cheryl Strayed",
+    author: "Cheryl Strayed",
     genreid: "12",
     imglink: "https://productimages.worldofbooks.com/1782394869.jpg",
     summary:
@@ -436,7 +436,7 @@ const books = [
 
   {
     title: "The 7 Habits of Highly Effective People",
-    author: "by Stephen R. Covey",
+    author: "Stephen R. Covey",
     genreid: "13",
     imglink: "https://productimages.worldofbooks.com/1471195201.jpg",
     summary:
@@ -445,7 +445,7 @@ const books = [
 
   {
     title: "How to Win Friends and Influence People",
-    author: "by Dale Carnegie ",
+    author: "Dale Carnegie ",
     genreid: "13",
     imglink: "https://productimages.worldofbooks.com/9381438706.jpg",
     summary:
@@ -454,7 +454,7 @@ const books = [
 
   {
     title: "Atomic Habits",
-    author: "by James Clear",
+    author: "James Clear",
     genreid: "13",
     imglink: "https://productimages.worldofbooks.com/0735211299.jpg",
     summary:
@@ -463,7 +463,7 @@ const books = [
 
   {
     title: "The Subtle Art of Not Giving a F*ck",
-    author: "by Mark Manson",
+    author: "Mark Manson",
     genreid: "13",
     imglink: "https://productimages.worldofbooks.com/0062641549.jpg",
     summary:
@@ -472,7 +472,7 @@ const books = [
 
   {
     title: "You Are a Badass",
-    author: "by Jen Sincero",
+    author: "Jen Sincero",
     genreid: "13",
     imglink: "https://productimages.worldofbooks.com/1529343763.jpg",
     summary:
@@ -481,7 +481,7 @@ const books = [
 
   {
     title: "Into the Wild",
-    author: "by Jon Krakauer",
+    author: "Jon Krakauer",
     genreid: "14",
     imglink: "https://productimages.worldofbooks.com/0330351699.jpg",
     summary:
@@ -490,7 +490,7 @@ const books = [
 
   {
     title: "Eat, Pray, Love",
-    author: "by Elizabeth Gilbert",
+    author: "Elizabeth Gilbert",
     genreid: "14",
     imglink: "https://productimages.worldofbooks.com/1408881446.jpg",
     summary:
@@ -499,7 +499,7 @@ const books = [
 
   {
     title: "In Patagonia",
-    author: "by Bruce Chatwin",
+    author: "Bruce Chatwin",
     genreid: "14",
     imglink: "https://productimages.worldofbooks.com/1784872245.jpg",
     summary:
@@ -508,7 +508,7 @@ const books = [
 
   {
     title: "A Walk in the Woods",
-    author: "by Bill Bryson",
+    author: "Bill Bryson",
     genreid: "14",
     imglink: "https://productimages.worldofbooks.com/1784161446_thumbnail.jpg",
     summary:
@@ -517,7 +517,7 @@ const books = [
 
   {
     title: "The Alchemist",
-    author: "by Paulo Coelho",
+    author: "Paulo Coelho",
     genreid: "14",
     imglink: "https://productimages.worldofbooks.com/0062390627.jpg",
     summary:
@@ -526,7 +526,7 @@ const books = [
 
   {
     title: "The Waste Land",
-    author: "by T.S. Eliot",
+    author: "T.S. Eliot",
     genreid: "15",
     imglink: "https://productimages.worldofbooks.com/0486849066.jpg",
     summary:
@@ -535,7 +535,7 @@ const books = [
 
   {
     title: "Selected Poems",
-    author: "by Langston Hughes",
+    author: "Langston Hughes",
     genreid: "15",
     imglink: "https://productimages.worldofbooks.com/1852421274.jpg",
     summary:
@@ -544,7 +544,7 @@ const books = [
 
   {
     title: "Leaves of Grass",
-    author: "by Walt Whitman",
+    author: "Walt Whitman",
     genreid: "15",
     imglink: "https://productimages.worldofbooks.com/1657675114.jpg",
     summary:
@@ -553,7 +553,7 @@ const books = [
 
   {
     title: "The Sun and Her Flowers",
-    author: "by Rupi Kaur",
+    author: "Rupi Kaur",
     genreid: "15",
     imglink: "https://productimages.worldofbooks.com/1471165825.jpg",
     summary:
@@ -562,7 +562,7 @@ const books = [
 
   {
     title: "Milk and Honey",
-    author: "by Rupi Kaur",
+    author: "Rupi Kaur",
     genreid: "15",
     imglink: "https://productimages.worldofbooks.com/144947425X.jpg",
     summary:
@@ -571,7 +571,7 @@ const books = [
 
   {
     title: "Romeo and Juliet",
-    author: "by William Shakespeare",
+    author: "William Shakespeare",
     genreid: "16",
     imglink: "https://productimages.worldofbooks.com/1679598066.jpg",
     summary:
@@ -580,7 +580,7 @@ const books = [
 
   {
     title: "Death of a Salesman",
-    author: "by Arthur Miller",
+    author: "Arthur Miller",
     genreid: "16",
     imglink: "https://productimages.worldofbooks.com/1411469518.jpg",
     summary:
@@ -589,7 +589,7 @@ const books = [
 
   {
     title: "A Streetcar Named Desire",
-    author: "by Tennessee Williams",
+    author: "Tennessee Williams",
     genreid: "16",
     imglink: "https://productimages.worldofbooks.com/0141190272.jpg",
     summary:
@@ -607,7 +607,7 @@ const books = [
 
   {
     title: "Hamlet",
-    author: "by William Shakespeare",
+    author: "William Shakespeare",
     genreid: "16",
     imglink: "https://productimages.worldofbooks.com/033340226X.jpg",
     summary:
@@ -616,7 +616,7 @@ const books = [
 
   {
     title: "Catch-22",
-    author: "by Joseph Heller",
+    author: "Joseph Heller",
     genreid: "17",
     imglink: "https://productimages.worldofbooks.com/1411407180.jpg",
     summary:
@@ -625,7 +625,7 @@ const books = [
 
   {
     title: "Good Omens",
-    author: "by Terry Pratchett and Neil Gaiman",
+    author: "Terry Pratchett and Neil Gaiman",
     genreid: "17",
     imglink: "https://productimages.worldofbooks.com/8804712023.jpg",
     summary:
@@ -634,7 +634,7 @@ const books = [
 
   {
     title: "The Hitchhiker's Guide to the Galaxy",
-    author: "by Douglas Adams",
+    author: "Douglas Adams",
     genreid: "17",
     imglink: "https://productimages.worldofbooks.com/1529034523.jpg",
     summary:
@@ -643,7 +643,7 @@ const books = [
 
   {
     title: "Bridget Jones's Diary",
-    author: "by Helen Fielding",
+    author: "Helen Fielding",
     genreid: "17",
     imglink: "https://productimages.worldofbooks.com/1447288939.jpg",
     summary:
@@ -652,7 +652,7 @@ const books = [
 
   {
     title: "Me Talk Pretty One Day",
-    author: "by David Sedaris ",
+    author: "David Sedaris ",
     genreid: "17",
     imglink: "https://productimages.worldofbooks.com/0349113912.jpg",
     summary:
@@ -661,7 +661,7 @@ const books = [
 
   {
     title: "Animal Farm",
-    author: "by George Orwell",
+    author: "George Orwell",
     genreid: "18",
     imglink: "https://productimages.worldofbooks.com/0582434475.jpg",
     summary:
@@ -670,7 +670,7 @@ const books = [
 
   {
     title: "Gulliver's Travels",
-    author: "by Jonathan Swift",
+    author: "Jonathan Swift",
     genreid: "18",
     imglink: "https://productimages.worldofbooks.com/9390893011.jpg",
     summary:
@@ -679,7 +679,7 @@ const books = [
 
   {
     title: "Catch-22",
-    author: "by Joseph Heller ",
+    author: "Joseph Heller ",
     genreid: "18",
     imglink: "https://productimages.worldofbooks.com/0099529122.jpg",
     summary:
@@ -688,7 +688,7 @@ const books = [
 
   {
     title: "Slaughterhouse-Five",
-    author: "by Kurt Vonnegut",
+    author: "Kurt Vonnegut",
     genreid: "18",
     imglink: "https://productimages.worldofbooks.com/0385333846.jpg",
     summary:
@@ -697,7 +697,7 @@ const books = [
 
   {
     title: "The Importance of Being Earnest",
-    author: "by Oscar Wilde",
+    author: "Oscar Wilde",
     genreid: "18",
     imglink: "https://productimages.worldofbooks.com/1670331016.jpg",
     summary:
@@ -706,7 +706,7 @@ const books = [
 
   {
     title: "The Hunger Games",
-    author: "by Suzanne Collins",
+    author: "Suzanne Collins",
     genreid: "19",
     imglink: "https://productimages.worldofbooks.com/1407132083.jpg",
     summary:
@@ -715,7 +715,7 @@ const books = [
 
   {
     title: "The Fault in Our Stars",
-    author: "by John Green",
+    author: "John Green",
     genreid: "19",
     imglink: "https://productimages.worldofbooks.com/0141345659.jpg",
     summary:
@@ -724,7 +724,7 @@ const books = [
 
   {
     title: "Harry Potter series",
-    author: "by J.K. Rowling",
+    author: "J.K. Rowling",
     genreid: "19",
     imglink: "https://productimages.worldofbooks.com/1474728626.jpg",
     summary:
@@ -733,7 +733,7 @@ const books = [
 
   {
     title: "The Perks of Being a Wallflower",
-    author: "by Stephen Chbosky",
+    author: "Stephen Chbosky",
     genreid: "19",
     imglink: "https://productimages.worldofbooks.com/147111614X.jpg",
     summary:
@@ -742,7 +742,7 @@ const books = [
 
   {
     title: "To All the Boys I've Loved Before",
-    author: "by Jenny Han",
+    author: "Jenny Han",
     genreid: "19",
     imglink: "https://productimages.worldofbooks.com/1407149075.jpg",
     summary:
@@ -751,7 +751,7 @@ const books = [
 
   {
     title: "Where the Wild Things Are",
-    author: "by Maurice Sendak ",
+    author: "Maurice Sendak ",
     genreid: "20",
     imglink: "https://productimages.worldofbooks.com/0099408392.jpg",
     summary:
@@ -760,7 +760,7 @@ const books = [
 
   {
     title: "Charlotte's Web",
-    author: "by E.B. White ",
+    author: "E.B. White ",
     genreid: "20",
     imglink: "https://productimages.worldofbooks.com/0064410935.jpg",
     summary:
@@ -769,7 +769,7 @@ const books = [
 
   {
     title: "Harry Potter series",
-    author: "by J.K. Rowling",
+    author: "J.K. Rowling",
     genreid: "20",
     imglink: "https://productimages.worldofbooks.com/1408898659.jpg",
     summary:
@@ -778,7 +778,7 @@ const books = [
 
   {
     title: "Matilda",
-    author: "by Roald Dahl",
+    author: "Roald Dahl",
     genreid: "20",
     imglink: "https://productimages.worldofbooks.com/024155831X.jpg",
     summary:
@@ -787,10 +787,47 @@ const books = [
 
   {
     title: "The Very Hungry Caterpillar",
-    author: "by Eric Carle",
+    author: "Eric Carle",
     genreid: "20",
     imglink: "https://productimages.worldofbooks.com/0241003008.jpg",
     summary:
       "The Very Hungry Caterpillar by Eric Carle is a classic children's picture book that follows the journey of a hungry caterpillar as it eats its way through a variety of foods before transforming into a beautiful butterfly. Each day of the week, the caterpillar consumes different foods, from apples and pears to cakes and sausages, before finally overeating and feeling sick. After resting in a cocoon, the caterpillar emerges as a magnificent butterfly, symbolizing transformation and rebirth. Through its vibrant illustrations, simple narrative, and interactive elements, The Very Hungry Caterpillar has captivated young readers and become a beloved classic in children's literature.",
   },
+  {
+    title: "Steve Jobs",
+    author: "Walter Isaacson",
+    genreid: "10",
+    imglink: "https://productimages.worldofbooks.com/034914043X.jpg",
+    summary: "todo",
+  },
+  {
+    title: "Becoming",
+    author: "Michelle Obama",
+    genreid: "10",
+    imglink: "https://productimages.worldofbooks.com/0241982979.jpg",
+    summary: "todo",
+  },
+  {
+    title: "The Diary of a Young Girl",
+    author: "Anne Frank",
+    genreid: "10",
+    imglink: "https://productimages.worldofbooks.com/1407100440.jpg",
+    summary: "todo",
+  },
+  {
+    title: "The Glass Castle",
+    author: "Jeannette Walls",
+    genreid: "10",
+    imglink: "https://productimages.worldofbooks.com/1844081826.jpg",
+    summary: "",
+  },
+  {
+    title: "Alexander Hamilton",
+    author: "Ron Chernow",
+    genreid: "10",
+    imglink: "https://productimages.worldofbooks.com/1800244398.jpg",
+    summary: "todo",
+  },
 ];
+
+export { books };
