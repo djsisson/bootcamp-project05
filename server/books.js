@@ -658,6 +658,15 @@ const books = [
     summary:
       "Me Talk Pretty One Day by David Sedaris is a collection of autobiographical essays that humorously chronicle the author's experiences growing up in North Carolina, living abroad in France, and navigating the challenges of adulthood. In the first half of the book, Sedaris reflects on his childhood, his relationship with his eccentric family, and his struggles with speech therapy as a young student. In the second half, he recounts his move to France with his partner, Hugh, and his attempts to learn French while dealing with cultural differences and social awkwardness. With his trademark wit, insight, and self-deprecating humor, Sedaris offers readers a candid and entertaining glimpse into his life, inviting them to laugh along with him at the absurdities of the human condition.",
   },
+  //comedy
+  {
+    title: "Big Little Lies",
+    author: "Liane Moriarty",
+    genreid: "17",
+    imglink: "https://productimages.worldofbooks.com/1405916362.jpg",
+    summary:
+      "Big Little Lies by Liane Moriarty is a gripping and darkly comedic novel set in a wealthy coastal town in Australia. The story revolves around three women - Madeline, Celeste, and Jane - whose lives intersect when their children enroll in the same kindergarten class. As they navigate the complexities of motherhood, marriage, and social hierarchy, their secrets and lies begin to unravel, leading to a shocking incident during a school trivia night. With themes of friendship, betrayal, and the facade of perfection, Moriarty crafts a compelling narrative that keeps readers guessing until the very end.",
+  },
 
   {
     title: "Animal Farm",
