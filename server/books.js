@@ -179,14 +179,14 @@ const books = [
       "The Girl with the Dragon Tattoo by Stieg Larsson introduces journalist Mikael Blomkvist and hacker Lisbeth Salander as they team up to investigate the disappearance of a wealthy industrialist's niece. Their investigation uncovers dark family secrets, financial corruption, and violence, leading to a thrilling and dangerous confrontation with the perpetrators.",
   },
 
-  {
-    title: "Pride and Prejudice",
-    author: "Jane Austen",
-    genreid: "/works/OL66554W",
-    imglink: "https://productimages.worldofbooks.com/2382740663.jpg",
-    summary:
-      "Pride and Prejudice by Jane Austen follows the lives of the Bennet family, particularly the headstrong Elizabeth Bennet, as they navigate social conventions, love, and marriage in early 19th-century England. The novel explores themes of class, manners, and the complexities of romantic relationships, culminating in the tumultuous courtship between Elizabeth and the proud Mr. Darcy.",
-  },
+  // {
+  //   title: "Pride and Prejudice",
+  //   author: "Jane Austen",
+  //   genreid: "/works/OL66554W",
+  //   imglink: "https://productimages.worldofbooks.com/2382740663.jpg",
+  //   summary:
+  //     "Pride and Prejudice by Jane Austen follows the lives of the Bennet family, particularly the headstrong Elizabeth Bennet, as they navigate social conventions, love, and marriage in early 19th-century England. The novel explores themes of class, manners, and the complexities of romantic relationships, culminating in the tumultuous courtship between Elizabeth and the proud Mr. Darcy.",
+  // },
 
   {
     title: "Outlander",
@@ -233,14 +233,14 @@ const books = [
       "Dune by Frank Herbert is a science fiction epic set in a distant future where noble houses vie for control over the desert planet Arrakis, the only source of the valuable spice melange. The story follows young Paul Atreides as he becomes embroiled in political intrigue, prophecy, and desert warfare, ultimately leading a rebellion against the oppressive rule of the Empire.",
   },
 
-  {
-    title: "The Hitchhiker's Guide to the Galaxy",
-    author: "Douglas Adams",
-    genreid: "/works/OL25125779W",
-    imglink: "https://productimages.worldofbooks.com/1529034523.jpg",
-    summary:
-      "The Hitchhiker's Guide to the Galaxy by Douglas Adams is a comedic science fiction novel that follows the adventures of Arthur Dent, an ordinary human who is swept off Earth just before its destruction to make way for an intergalactic highway. Arthur embarks on a journey through space with his eccentric alien friend Ford Prefect, encountering bizarre creatures, interstellar bureaucracy, and the ultimate answer to life, the universe, and everything.",
-  },
+  // {
+  //   title: "The Hitchhiker's Guide to the Galaxy",
+  //   author: "Douglas Adams",
+  //   genreid: "/works/OL25125779W",
+  //   imglink: "https://productimages.worldofbooks.com/1529034523.jpg",
+  //   summary:
+  //     "The Hitchhiker's Guide to the Galaxy by Douglas Adams is a comedic science fiction novel that follows the adventures of Arthur Dent, an ordinary human who is swept off Earth just before its destruction to make way for an intergalactic highway. Arthur embarks on a journey through space with his eccentric alien friend Ford Prefect, encountering bizarre creatures, interstellar bureaucracy, and the ultimate answer to life, the universe, and everything.",
+  // },
 
   {
     title: "Ender's Game",
@@ -488,14 +488,14 @@ const books = [
       "Into the Wild by Jon Krakauer is a non-fiction book that tells the story of Christopher McCandless, a young man who abandoned his conventional life to embark on a solo journey into the Alaskan wilderness. Through McCandless's experiences and encounters along the way, Krakauer explores themes of adventure, self-discovery, and the search for meaning in the natural world",
   },
 
-  {
-    title: "Eat, Pray, Love",
-    author: "Elizabeth Gilbert",
-    genreid: "/works/OL41815W",
-    imglink: "https://productimages.worldofbooks.com/1408881446.jpg",
-    summary:
-      "Eat, Pray, Love by Elizabeth Gilbert is a memoir that follows the author's journey of self-discovery as she travels to Italy, India, and Indonesia after a painful divorce. In each country, Gilbert explores different aspects of her identity and seeks to find balance, meaning, and fulfillment in her life. The book explores themes of spirituality, love, and personal growth.",
-  },
+  // {
+  //   title: "Eat, Pray, Love",
+  //   author: "Elizabeth Gilbert",
+  //   genreid: "/works/OL41815W",
+  //   imglink: "https://productimages.worldofbooks.com/1408881446.jpg",
+  //   summary:
+  //     "Eat, Pray, Love by Elizabeth Gilbert is a memoir that follows the author's journey of self-discovery as she travels to Italy, India, and Indonesia after a painful divorce. In each country, Gilbert explores different aspects of her identity and seeks to find balance, meaning, and fulfillment in her life. The book explores themes of spirituality, love, and personal growth.",
+  // },
 
   {
     title: "In Patagonia",
@@ -620,8 +620,7 @@ const books = [
     genreid: "/works/OL17116911W",
     imglink: "https://productimages.worldofbooks.com/1405916362.jpg",
     summary:
-    "Big Little Lies by Liane Moriarty is a gripping and darkly comedic novel set in a wealthy coastal town in Australia. The story revolves around three women - Madeline, Celeste, and Jane - whose lives intersect when their children enroll in the same kindergarten class. As they navigate the complexities of motherhood, marriage, and social hierarchy, their secrets and lies begin to unravel, leading to a shocking incident during a school trivia night. With themes of friendship, betrayal, and the facade of perfection, Moriarty crafts a compelling narrative that keeps readers guessing until the very end.",
-  
+      "Big Little Lies by Liane Moriarty is a gripping and darkly comedic novel set in a wealthy coastal town in Australia. The story revolves around three women - Madeline, Celeste, and Jane - whose lives intersect when their children enroll in the same kindergarten class. As they navigate the complexities of motherhood, marriage, and social hierarchy, their secrets and lies begin to unravel, leading to a shocking incident during a school trivia night. With themes of friendship, betrayal, and the facade of perfection, Moriarty crafts a compelling narrative that keeps readers guessing until the very end.",
   },
 
   {
@@ -658,15 +657,6 @@ const books = [
     imglink: "https://productimages.worldofbooks.com/0349113912.jpg",
     summary:
       "Me Talk Pretty One Day by David Sedaris is a collection of autobiographical essays that humorously chronicle the author's experiences growing up in North Carolina, living abroad in France, and navigating the challenges of adulthood. In the first half of the book, Sedaris reflects on his childhood, his relationship with his eccentric family, and his struggles with speech therapy as a young student. In the second half, he recounts his move to France with his partner, Hugh, and his attempts to learn French while dealing with cultural differences and social awkwardness. With his trademark wit, insight, and self-deprecating humor, Sedaris offers readers a candid and entertaining glimpse into his life, inviting them to laugh along with him at the absurdities of the human condition.",
-  },
-  //comedy
-  {
-    title: "Big Little Lies",
-    author: "Liane Moriarty",
-    genreid: "17",
-    imglink: "https://productimages.worldofbooks.com/1405916362.jpg",
-    summary:
-      "Big Little Lies by Liane Moriarty is a gripping and darkly comedic novel set in a wealthy coastal town in Australia. The story revolves around three women - Madeline, Celeste, and Jane - whose lives intersect when their children enroll in the same kindergarten class. As they navigate the complexities of motherhood, marriage, and social hierarchy, their secrets and lies begin to unravel, leading to a shocking incident during a school trivia night. With themes of friendship, betrayal, and the facade of perfection, Moriarty crafts a compelling narrative that keeps readers guessing until the very end.",
   },
 
   {
@@ -777,14 +767,14 @@ const books = [
       "Charlotte's Web by E.B. White is a heartwarming tale of friendship, loyalty, and selflessness. The story follows a young pig named Wilbur who is saved from slaughter by a clever spider named Charlotte. With the help of Charlotte and other barnyard friends, Wilbur learns valuable lessons about life, love, and the importance of kindness. As Charlotte spins webs with messages praising Wilbur, he becomes famous and cherished by the community. However, as Wilbur grows older, Charlotte's health deteriorates, and Wilbur must find a way to save her legacy. Through its gentle humor, poignant themes, and memorable characters, Charlotte's Web is a timeless classic that continues to inspire readers of all ages.",
   },
 
-  {
-    title: "Harry Potter series",
-    author: "J.K. Rowling",
-    genreid: "/works/OL14981609W",
-    imglink: "https://productimages.worldofbooks.com/1408898659.jpg",
-    summary:
-      "The Harry Potter series by J.K. Rowling follows the magical adventures of Harry Potter, a young wizard who discovers that he is the chosen one destined to defeat the dark wizard Voldemort. The series begins with Harry's discovery of his magical heritage and his enrollment at Hogwarts School of Witchcraft and Wizardry, where he learns about friendship, courage, and the power of love. As Harry grows older, he and his friends Ron and Hermione confront increasingly dangerous challenges, including battles with dark wizards, magical creatures, and dark forces threatening the wizarding world. Through its richly imagined world, compelling characters, and themes of love, friendship, and the struggle between good and evil, the Harry Potter series has captivated readers of all ages and become one of the most beloved and influential series in modern literature.",
-  },
+  // {
+  //   title: "Harry Potter series",
+  //   author: "J.K. Rowling",
+  //   genreid: "/works/OL14981609W",
+  //   imglink: "https://productimages.worldofbooks.com/1408898659.jpg",
+  //   summary:
+  //     "The Harry Potter series by J.K. Rowling follows the magical adventures of Harry Potter, a young wizard who discovers that he is the chosen one destined to defeat the dark wizard Voldemort. The series begins with Harry's discovery of his magical heritage and his enrollment at Hogwarts School of Witchcraft and Wizardry, where he learns about friendship, courage, and the power of love. As Harry grows older, he and his friends Ron and Hermione confront increasingly dangerous challenges, including battles with dark wizards, magical creatures, and dark forces threatening the wizarding world. Through its richly imagined world, compelling characters, and themes of love, friendship, and the struggle between good and evil, the Harry Potter series has captivated readers of all ages and become one of the most beloved and influential series in modern literature.",
+  // },
 
   {
     title: "Matilda",
@@ -818,16 +808,12 @@ const books = [
     imglink: "https://productimages.worldofbooks.com/0241982979.jpg",
     summary:
       "Becoming by Michelle Obama is a deeply personal memoir that chronicles the life of the former First Lady of the United States. In the book, Obama reflects on her childhood in Chicago, her experiences as a student, her career as a lawyer and public servant, and her role as a wife and mother. With candor and grace, Obama shares her triumphs and challenges, including her time in the White House alongside her husband, Barack Obama. Through her inspiring journey, Obama encourages readers to embrace their own stories and strive for authenticity, purpose, and resilience.",
-    summary:
-      "Becoming by Michelle Obama is a deeply personal memoir that chronicles the life of the former First Lady of the United States. In the book, Obama reflects on her childhood in Chicago, her experiences as a student, her career as a lawyer and public servant, and her role as a wife and mother. With candor and grace, Obama shares her triumphs and challenges, including her time in the White House alongside her husband, Barack Obama. Through her inspiring journey, Obama encourages readers to embrace their own stories and strive for authenticity, purpose, and resilience.",
   },
   {
     title: "The Diary of a Young Girl",
     author: "Anne Frank",
     genreid: "/works/OL27294413W",
     imglink: "https://productimages.worldofbooks.com/1407100440.jpg",
-    summary:
-      "The Diary of a Young Girl by Anne Frank is a poignant and powerful memoir of a young Jewish girl's experience during the Holocaust. Written while Frank and her family were in hiding from the Nazis in Amsterdam, the diary provides a firsthand account of life in hiding, as well as Frank's thoughts, feelings, and dreams. Despite the hardships and dangers she faced, Frank's diary is filled with hope, optimism, and a belief in the goodness of humanity. Through her words, Frank's legacy continues to inspire readers around the world to confront injustice and prejudice and to cherish the values of courage, resilience, and compassion.",
     summary:
       "The Diary of a Young Girl by Anne Frank is a poignant and powerful memoir of a young Jewish girl's experience during the Holocaust. Written while Frank and her family were in hiding from the Nazis in Amsterdam, the diary provides a firsthand account of life in hiding, as well as Frank's thoughts, feelings, and dreams. Despite the hardships and dangers she faced, Frank's diary is filled with hope, optimism, and a belief in the goodness of humanity. Through her words, Frank's legacy continues to inspire readers around the world to confront injustice and prejudice and to cherish the values of courage, resilience, and compassion.",
   },
@@ -838,8 +824,6 @@ const books = [
     imglink: "https://productimages.worldofbooks.com/1844081826.jpg",
     summary:
       "The Glass Castle by Jeannette Walls is a memoir that recounts Walls' unconventional and tumultuous upbringing in a nomadic and impoverished family. With parents who were both brilliant and deeply flawed, Walls and her siblings endured poverty, neglect, and instability as they moved from place to place in search of a better life. Despite the hardships, Walls finds strength and resilience in her own determination to overcome her circumstances and build a better future for herself. Through her candid and vivid storytelling, Walls offers a compelling portrait of resilience, forgiveness, and the enduring power of family bonds.",
-    summary:
-      "The Glass Castle by Jeannette Walls is a memoir that recounts Walls' unconventional and tumultuous upbringing in a nomadic and impoverished family. With parents who were both brilliant and deeply flawed, Walls and her siblings endured poverty, neglect, and instability as they moved from place to place in search of a better life. Despite the hardships, Walls finds strength and resilience in her own determination to overcome her circumstances and build a better future for herself. Through her candid and vivid storytelling, Walls offers a compelling portrait of resilience, forgiveness, and the enduring power of family bonds.",
   },
   {
     title: "Alexander Hamilton",
@@ -847,9 +831,7 @@ const books = [
     genreid: "/works/OL2665176W",
     imglink: "https://productimages.worldofbooks.com/1800244398.jpg",
     summary:
-      "Alexander Hamilton by Ron Chernow is a biography of one of America's most influential founding fathers, Alexander Hamilton. Chernow delves into Hamilton's remarkable life, from his humble beginnings as an orphaned immigrant to his rise as a key figure in the American Revolution and the founding of the United States. With his brilliant mind, fierce ambition, and tireless work ethic, Hamilton played a pivotal role in shaping the nation's political and economic systems, including the creation of the U.S. financial system and the drafting of the Constitution. Through meticulous research and vivid storytelling, Chernow offers a comprehensive and illuminating portrait of Hamilton's life, legacy, and lasting impact on American history.todo",
-    summary:
-      "Alexander Hamilton by Ron Chernow is a biography of one of America's most influential founding fathers, Alexander Hamilton. Chernow delves into Hamilton's remarkable life, from his humble beginnings as an orphaned immigrant to his rise as a key figure in the American Revolution and the founding of the United States. With his brilliant mind, fierce ambition, and tireless work ethic, Hamilton played a pivotal role in shaping the nation's political and economic systems, including the creation of the U.S. financial system and the drafting of the Constitution. Through meticulous research and vivid storytelling, Chernow offers a comprehensive and illuminating portrait of Hamilton's life, legacy, and lasting impact on American history.todo",
+      "Alexander Hamilton by Ron Chernow is a biography of one of America's most influential founding fathers, Alexander Hamilton. Chernow delves into Hamilton's remarkable life, from his humble beginnings as an orphaned immigrant to his rise as a key figure in the American Revolution and the founding of the United States. With his brilliant mind, fierce ambition, and tireless work ethic, Hamilton played a pivotal role in shaping the nation's political and economic systems, including the creation of the U.S. financial system and the drafting of the Constitution. Through meticulous research and vivid storytelling, Chernow offers a comprehensive and illuminating portrait of Hamilton's life, legacy, and lasting impact on American history.",
   },
 ];
 
