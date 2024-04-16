@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Club</title>
-    <script src="./app.js" type="module"></script>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
     <header class="container">
         <h1>Book Club</h1>
         <input type="text" id="searchInput" placeholder="Search for a book...">
-        <select name="" id="">
+        <select id="categoryFilter">
             <option value="">All Categories</option>
             <option value="fiction">Fiction</option>
             <option value="nonfiction">Non-Fiction</option>
@@ -26,10 +25,18 @@
             <option value="romance">Romance</option>
             <option value="thriller">Thriller</option>
         </select>
-        <button onclick="searchBooks()">Search</button>
+        <button id="searchButton">Search</button>
     </header>
+    
     <main id="searchResults">
+        <div class="book">
+            <a href="book/index.html?key=works${book.key}">
         <!-- Search results will be displayed here -->
+            </a>
+        </div>
     </main>
+
+
+    <script src="./app.js" type="module"></script>
 </body>
 </html>
