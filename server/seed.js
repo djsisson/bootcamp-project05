@@ -1,5 +1,7 @@
 import Database from "better-sqlite3";
 import { faker } from "@faker-js/faker";
+import * as b from "./books.js";
+
 const db = new Database("database.db");
 const g_userCount = 100;
 
@@ -98,6 +100,29 @@ function insertUsers() {
   }
 }
 
+function insertBooks() {
+  b.books.forEach((x) => {
+    db.prepare(
+      `INSERT INTO books (title, author, imglink, summary, book_key) VALUES (?, ?, ?, ?, ?)`
+    ).run(x.title, x.author, x.imglink, x.summary, x.genreid + x.title);
+  });
+}
+
+function generateReviews(){
+  const books = db.prepare(`SELECT * FROM books`).all()
+  const users = db.prepare(`SELECT * FROM users`).all()
+  books.forEach((x) => {
+    users.forEach((user) => {
+      if (Math.random() < 0.1) {
+        db.prepare(
+      `INSERT INTO reviews (user_id, book_id, review, rating) VALUES (?, ?, ?, ?)`
+    ).run(user.user_id, x.book_id, faker.lorem.sentences({ min: 1, max: 3 }, "\n"), Math.floor(Math.random()*5)+1);
+      }
+    })
+    
+  })
+}
+
 function dropTables() {
   db.exec(`DROP TABLE IF EXISTS favourites`);
   db.exec(`DROP TABLE IF EXISTS reviews`);
@@ -111,6 +136,8 @@ function startDB() {
   createTables();
   insertGenres();
   insertUsers();
+  insertBooks();
+  generateReviews();
 }
 
 // startDB();
