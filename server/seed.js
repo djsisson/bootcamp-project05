@@ -108,19 +108,39 @@ function insertBooks() {
   });
 }
 
-function generateReviews(){
-  const books = db.prepare(`SELECT * FROM books`).all()
-  const users = db.prepare(`SELECT * FROM users`).all()
+async function findBookKey() {
+  for (let x of b.books) {
+    const apiUrl = `https://openlibrary.org/search.json?title=${x.title}&author=${x.author}&fields=key,title,author_name&limit=10`;
+    const response = await fetch(apiUrl);
+    if (response.status == 200) {
+      const data = await response.json().then((book) => {
+        if (book.docs.length != 0) {
+          console.log(x.title, x.author, book.docs[0].key);
+        }
+        
+      });   
+    }
+    break;
+  }
+}
+
+function generateReviews() {
+  const books = db.prepare(`SELECT * FROM books`).all();
+  const users = db.prepare(`SELECT * FROM users`).all();
   books.forEach((x) => {
     users.forEach((user) => {
       if (Math.random() < 0.1) {
         db.prepare(
-      `INSERT INTO reviews (user_id, book_id, review, rating) VALUES (?, ?, ?, ?)`
-    ).run(user.user_id, x.book_id, faker.lorem.sentences({ min: 1, max: 3 }, "\n"), Math.floor(Math.random()*5)+1);
+          `INSERT INTO reviews (user_id, book_id, review, rating) VALUES (?, ?, ?, ?)`
+        ).run(
+          user.user_id,
+          x.book_id,
+          faker.lorem.sentences({ min: 1, max: 3 }, "\n"),
+          Math.floor(Math.random() * 5) + 1
+        );
       }
-    })
-    
-  })
+    });
+  });
 }
 
 function dropTables() {
@@ -141,3 +161,4 @@ function startDB() {
 }
 
 // startDB();
+// findBookKey();
