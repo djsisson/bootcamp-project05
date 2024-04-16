@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Book Details</h1>
+        <div id="bookDetails">
+            <!-- Book details will be displayed here -->
+        </div>
+        <h2>Rating</h2>
+        <p id="bookRating">Rating: <span id="ratingValue">-</span></p>
+        <h2>Comments</h2>
+        <p id="bookComment">Comment: <span id="commentValue">-</span></p>
+        <button id="reviewButton">Leave a Review</button>
+    </div>
+
+    <div id="reviewPopup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <h2>Leave a Review</h2>
+            <input type="number" id="popupRating" min="1" max="5" placeholder="Enter rating (1-5)">
+            <textarea id="popupComment" rows="4" placeholder="Enter your comment"></textarea>
+            <button onclick="submitReview()">Submit Review</button>
+        </div>
+    </div>
+
+    <script src="./book-details.js" type="module"></script>
+</body>
+</html>
