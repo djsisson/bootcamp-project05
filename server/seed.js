@@ -104,7 +104,7 @@ function insertBooks() {
   b.books.forEach((x) => {
     db.prepare(
       `INSERT INTO books (title, author, imglink, summary, book_key) VALUES (?, ?, ?, ?, ?)`
-    ).run(x.title, x.author, x.imglink, x.summary, x.genreid + x.title);
+    ).run(x.title, x.author, x.imglink, x.summary, x.genreid);
   });
 }
 
