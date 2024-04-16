@@ -12,7 +12,8 @@ async function fetchBookDetails() {
             throw new Error(`Failed to fetch book details (HTTP status ${response.status})`);
         }
         const data = await response.json();
-        document.getElementById('bookDetails').innerHTML = `<h2>${data.title}</h2><p>${data.description || 'Description not available'}</p>`;
+        console.log(data)
+        document.getElementById('bookDetails').innerHTML = `<h2>${data.title}</h2><p>${data.description.value || data.description || 'Description not available'}</p>`;
         document.getElementById('bookRating').innerHTML = `Rating: <span id="ratingValue">${localStorage.getItem('bookRating') || '-'}</span>`;
         document.getElementById('bookComment').innerHTML = `Comment: <span id="commentValue">${localStorage.getItem('bookComment') || '-'}</span>`;
     } catch (error) {
