@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors";
-import * as query from "./query.js"
+import * as query from "./query.js";
 
 const app = express();
 
@@ -117,6 +117,20 @@ app.get("/books/:bookid(\\d+)", (req, res) => {
   }
 });
 
+app.get("/books/key/:bookkey", (req, res) => {
+  try {
+    const result = query.getBookByKey(req.params.bookkey);
+    if (result.length == 0) {
+      res.status(400).send();
+    } else {
+      res.status(200).send(result);
+    }
+  } catch (error) {
+    res.status(400).send();
+  }
+});
+
+//not needed
 app.get("/books/genre/:genreid(\\d+)", (req, res) => {
   try {
     const result = query.getBooksByGenre(req.params.genreid);
@@ -130,22 +144,20 @@ app.get("/books/genre/:genreid(\\d+)", (req, res) => {
   }
 });
 
+//not needed
 app.get("/books/search/", (req, res) => {
   try {
-    const result = query.getBooksBySearch(req.body.search);
-    if (result.length == 0) {
-      res.status(400).send();
-    } else {
-      res.status(200).send(result);
-    }
+    const result = query.getBooksBySearch(req.body.search,0);
+    res.status(200).send(result);
   } catch (error) {
+    console.log(error)
     res.status(400).send();
   }
 });
 
 app.post("/review/new", (req, res) => {
   try {
-    res.status(200).json(query.addBook(req.body));
+    res.status(200).json(query.addReview(req.body));
   } catch (error) {
     res.status(400).send();
   }
@@ -175,6 +187,7 @@ app.put("/review/:reviewid(\\d+)", (req, res) => {
       res.status(200).json(reviewid);
     }
   } catch (error) {
+    console.log(error)
     res.status(400).send();
   }
 });
@@ -211,6 +224,7 @@ app.delete("/favourite/:favouriteid(\\d+)", (req, res) => {
       res.status(200).send();
     }
   } catch (error) {
+    console.log(error)
     res.status(400).send();
   }
 });
@@ -218,11 +232,7 @@ app.delete("/favourite/:favouriteid(\\d+)", (req, res) => {
 app.get("/favourite/:userid(\\d+)", (req, res) => {
   try {
     const result = query.getFavourites(req.params.userid);
-    if (result.length == 0) {
-      res.status(400).send();
-    } else {
-      res.status(200).send(result);
-    }
+    res.status(200).send(result);
   } catch (error) {
     res.status(400).send();
   }

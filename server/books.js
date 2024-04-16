@@ -6,6 +6,7 @@ const books = [
     imglink: "https://productimages.worldofbooks.com/0345350685.jpg",
     summary:
       "The Autobiography of Malcolm X is a powerful and candid memoir that traces the life of Malcolm X, from his tumultuous childhood to his transformation into one of the most influential civil rights leaders in American history. Co-written by Alex Haley, the book offers a firsthand account of Malcolm X's journey from a troubled youth involved in crime to his conversion to Islam while serving time in prison. It delves into his experiences with racism, his time as a prominent figure in the Nation of Islam, and his eventual break with the organization. Through his reflections, Malcolm X shares his evolving beliefs on race, religion, and activism, offering valuable insights into the struggles faced by African Americans during the civil rights era. His autobiography is a compelling narrative of self-discovery, resilience, and the quest for justice.",
+      key:"OL19801148W"
   },
 
   {

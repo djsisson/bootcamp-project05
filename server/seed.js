@@ -21,11 +21,9 @@ function createTables() {
   db.exec(`
     CREATE TABLE IF NOT EXISTS books (
         book_id INTEGER PRIMARY KEY,
+        book_key TEXT NOT NULL UNIQUE,
         title TEXT NOT NULL,
         author TEXT NOT NULL,
-        genre_id INTEGER REFERENCES genres (genre_id)
-                ON UPDATE RESTRICT
-                ON DELETE RESTRICT,
         imglink TEXT,
         summary TEXT
 )
@@ -115,4 +113,4 @@ function startDB() {
   insertUsers();
 }
 
-startDB();
+// startDB();
