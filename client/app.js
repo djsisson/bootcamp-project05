@@ -8,12 +8,11 @@ async function appStart() {
   addGenres();
   document
     .getElementById("searchButton")
-    .addEventListener("click", function () {
+    .addEventListener("click", function (e) {
       searchOLBooks();
     });
-    await r.getBookSearch("")
-    console.log(g.getBooks())
-    addBooks()
+    await r.getBookSearch("").then((x) => (addBooks()))
+    
 }
 
 function addGenres() {
@@ -34,7 +33,7 @@ function addGenres() {
 async function searchOLBooks() {
   const searchInput = document.getElementById("searchInput").value;
   const categoryFilter = document.getElementById("categoryFilter").value;
-
+  if (searchInput=="") {return}
   // Construct URL with category filter
   let apiUrl = `${g.ol_search}${searchInput}${g.ol_Fields}`;
   if (categoryFilter) {
@@ -48,7 +47,6 @@ async function searchOLBooks() {
       title: x.title,
       author: x.author_name || [],
       imglink: x.cover_i || "",
-      // imglink: `${g.ol_cover}${x.cover_i}-M.jpg` || "",
       year: x.first_publish_year || "",
     }));
     newBooks.forEach((x) => {
@@ -76,7 +74,6 @@ function addBooks() {
     const authors = book.author;
     const coverUrl = book.imglink;
     const details = book.year || "";
-    console.log(book.imglink);
     const bookElement = document.createElement("div");
     bookElement.addEventListener("click", (e) => {
       window.location.href = `book/index.html?key=${book.book_key}&author=${book.author}`;
