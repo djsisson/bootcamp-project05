@@ -13,6 +13,8 @@ async function appStart() {
     await r.newBook();
   }
   showBookDetails();
+  await r.getReviews();
+  loadReviews()
 }
 
 async function getBookFromOL() {
@@ -29,14 +31,18 @@ async function getBookFromOL() {
       title: data.title,
       author: parseParamsAuthor(),
       book_key: parseParamsKey(),
-      imglink: `${g.ol_cover}${data.covers[0]}-M.jpg`,
+      imglink: data.covers || "",
       summary: data.description || "",
     };
+    if (newBook.imglink != ""){
+        newBook.imglink = `${g.ol_cover}${data.covers[0]}-M.jpg`
+    }
     if (newBook.summary != "") {
-      newBook.summary = newBook.summary.value;
+      newBook.summary = newBook.summary || newBook.summary.value;
     } else {
       newBook.summary = "Description not available";
     }
+    console.log(newBook)
     g.setCurrentBook(newBook);
   });
 }
@@ -50,7 +56,7 @@ function showBookDetails() {
             <img src="${curBook.imglink}" alt="${curBook.title} cover">
             <div>
                 <h2>${curBook.title}</h2>
-                <p>${curBook.author}<p>
+                <p>${curBook.author}</p>
                 <p>${curBook.summary}</p>
                 
             </div>
@@ -60,16 +66,24 @@ function showBookDetails() {
             <p><p>
                 <p>Rating ${curBook.rating || "No Rating"}<p>
                 <p>Total Number of Ratings: ${curBook.ratingcount}</p>
-            <h2>Comments</h2>
-            <p>Comment: <span id="commentValue">${
-              localStorage.getItem("bookComment") || "-"
-            }</span></p>
-            <button id="reviewButton" onclick="showPopup()">Leave a Review</button>
         </div>
     `;
 }
 
-async function loadReviews() {}
+async function loadReviews() {
+    const bookDetailsContainer = document.getElementById("bookReviews");
+  const curReviews = g.getReviews();
+  bookDetailsContainer.innerHTML=""
+  curReviews.forEach((review) => {
+    const newReview = document.createElement("div")
+    newReview.innerHTML = `
+                <h2>${review.user}</h2>
+                <p>${review.rating}</p>
+                <div>${review.review}</div>
+    `
+    bookDetailsContainer.appendChild(newReview)
+  })
+}
 
 function parseParamsKey() {
   const urlParams = new URLSearchParams(window.location.search);
