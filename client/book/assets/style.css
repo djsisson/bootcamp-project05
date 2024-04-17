@@ -2,13 +2,24 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #f4f3dc;
 }
 
 .container {
-    background-color: rgba(255, 255, 255, 0.8); 
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+        /* background-color: rgba(255, 255, 255, 0.8); 
     padding: 20px;
     border-radius: 10px;
+    margin-bottom: 20px; */
+}
+
+.search-comtainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     margin-bottom: 20px;
 }
 
@@ -22,12 +33,13 @@ input[type="text"], select {
 }
 
 button {
+    height: 40px;
+    padding: 5px 20px;
+    border-radius: 15px;
     background-color: #0083e7;
     color: white;
-    padding: 10px 20px;
     border: none;
     cursor: pointer;
-    border-radius: 15px;
 }
 
 button:hover {
@@ -36,6 +48,7 @@ button:hover {
 
 .book {
     display: flex;
+    flex-direction: column;
     margin-bottom: 20px;
     padding: 10px;
     border: 1px solid #ddd;
@@ -46,13 +59,39 @@ button:hover {
 .book img {
     width: 100px;
     height: auto;
-    margin-right: 20px;
+    margin: 0 auto 10px;
+    border-radius: 5px;
 }
 
 .book-details {
-    flex: 1;
+    text-align: center;
+}
+.book-info {
+    display: flex;
+    align-items: center; /* Align book info horizontally */
+    margin-bottom: 20px;
 }
 
+.book-info img {
+    width: 200px;
+    height: auto;
+    margin-right: 20px;
+    border-radius: 5px;
+}
+
+.book-info div {
+    text-align: left; /* Left align book description */
+}
+
+.ratings-reviews {
+    text-align: center; /* Center align ratings and reviews */
+}
+
+#searchResults {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 20px;
+}
 #bookDetails {
     margin-bottom: 20px;
 }
@@ -113,4 +152,20 @@ button:hover {
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+/* Add styles for user icon and user page */
+.user-icon {
+    float: right;
+    margin-top: -50px; /* Adjust as needed */
+}
+
+#userIcon {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+/* Hide user page by default */
+.hidden {
+    display: none;
 }

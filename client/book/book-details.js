@@ -12,12 +12,27 @@ async function fetchBookDetails() {
             throw new Error(`Failed to fetch book details (HTTP status ${response.status})`);
         }
         const data = await response.json();
-        console.log(data)
-        document.getElementById('bookDetails').innerHTML = `<h2>${data.title}</h2><p>${data.description.value || data.description || 'Description not available'}</p>`;
-        document.getElementById('bookRating').innerHTML = `Rating: <span id="ratingValue">${localStorage.getItem('bookRating') || '-'}</span>`;
-        document.getElementById('bookComment').innerHTML = `Comment: <span id="commentValue">${localStorage.getItem('bookComment') || '-'}</span>`;
+        console.log(data);
+        
+        const bookDetailsContainer = document.getElementById('bookDetails');
+        bookDetailsContainer.innerHTML = `
+            <div class="book-info">
+                <img src="http://covers.openlibrary.org/b/id/${data.covers[0]}-M.jpg" alt="${data.title} cover">
+                <div>
+                    <h2>${data.title}</h2>
+                    <p>${data.description.value || data.description || 'Description not available'}</p>
+                </div>
+            </div>
+            <div class="ratings-reviews">
+                <h2>Rating</h2>
+                <p>Rating: <span id="ratingValue">${localStorage.getItem('bookRating') || '-'}</span></p>
+                <h2>Comments</h2>
+                <p>Comment: <span id="commentValue">${localStorage.getItem('bookComment') || '-'}</span></p>
+                <button id="reviewButton" onclick="showPopup()">Leave a Review</button>
+            </div>
+        `;
     } catch (error) {
-        // console.error('Error fetching book details:', error.message);
+        console.error('Error fetching book details:', error.message);
     }
 }
 

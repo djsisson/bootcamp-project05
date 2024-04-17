@@ -9,6 +9,11 @@
 <body>
     <header class="container">
         <h1>Book Club</h1>
+        <div class="avatar">
+            <div class="user-icon">
+                <a href="user/index.html"><img src="user-icon.png" alt="User Icon"></a>
+            </div>
+        </div>
         <input type="text" id="searchInput" placeholder="Search for a book...">
         <select id="categoryFilter">
             <option value="">All Categories</option>
@@ -28,7 +33,7 @@
         <button id="searchButton">Search</button>
     </header>
     
-    <main id="searchResults">
+    <main id="searchResults" class="container">
         <div class="book">
             <a href="book/index.html?key=works${book.key}">
         <!-- Search results will be displayed here -->

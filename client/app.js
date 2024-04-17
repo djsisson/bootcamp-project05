@@ -24,7 +24,7 @@ async function searchBooks() {
   }
 
   // Fetch data from Open Library API
-  const response = await fetch(apiUrl + "&limit=10&sort=rating");
+  const response = await fetch(apiUrl + "&sort=rating");
   const data = await response.json().then((data) => {
     addBooks(data)
   });
@@ -50,7 +50,7 @@ async function searchBooks() {
           ? book.author_name.join(", ")
           : "Unknown Author";
         const coverUrl = `http://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`;
-        const details = book.publish_date ? `Published: ${book.publish_date}` : "";
+        const details = book.publish_date ? `Published: ${book.publish_date[0]}` : "";
         console.log(book.key);
         const bookElement = document.createElement("div");
         bookElement.addEventListener("click", (e) => {
