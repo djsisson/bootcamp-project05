@@ -121,11 +121,12 @@ app.get("/books/works/:bookkey", (req, res) => {
   try {
     const result = query.getBookByKey(req.params.bookkey);
     if (result.length == 0) {
-      res.status(400).send();
+      res.status(204).send();
     } else {
-      res.status(200).send(result);
+      res.status(200).send(result[0]);
     }
   } catch (error) {
+    console.log()
     res.status(400).send();
   }
 });
