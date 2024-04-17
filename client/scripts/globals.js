@@ -1,7 +1,8 @@
 const db = import.meta.env.VITE_DATABASE_URL;
-const ol_search = "http://openlibrary.org/search.json?";
+const ol_search = "http://openlibrary.org/search.json?title=";
+const ol_Fields = "&fields=key,title,author_name,cover_i,first_publish_year&limit=20"
 const ol_cover = "http://covers.openlibrary.org/b/id/";
-let g_user = { id: 0, name: "", age: 0, email: "" };
+let g_user = { id: 1, name: "", age: 0, email: "" };
 let g_books = [];
 let g_Genres = [];
 let g_CurrentBook = { book_id: 0 };
@@ -78,6 +79,7 @@ export {
   db,
   ol_cover,
   ol_search,
+  ol_Fields,
   getGenres,
   setGenres,
   setUser,
