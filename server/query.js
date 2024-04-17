@@ -75,7 +75,7 @@ function updateUser(user) {
 
 function addBook(book) {
   const newBook = db.prepare(
-    `INSERT INTO books (book_key, title, author, imglink, summary) VALUES (@bookkey, @title, @author, @imglink, @summary)`
+    `INSERT INTO books (book_key, title, author, imglink, summary) VALUES (@book_key, @title, @author, @imglink, @summary)`
   );
   try {
     const trans = db
@@ -85,7 +85,7 @@ function addBook(book) {
       })
       .apply();
     return db
-      .prepare("SELECT * FROM books where book_id = (?)")
+      .prepare("SELECT b.*, round(avg(r.rating), 2) rating, COUNT(r.rating) ratingcount FROM books as b LEFT JOIN reviews as r ON b.book_id = r.book_id WHERE b.book_id = (?) GROUP BY b.book_id")
       .all(trans.lastInsertRowid)[0];
   } catch (error) {
     throw error;
@@ -125,13 +125,12 @@ function deleteBook(book_id) {
 }
 
 function getBookByKey(book_key) {
-  console.log(book_key);
   try {
     const book = db
       .prepare(
         "SELECT b.*, round(avg(r.rating), 2) rating, COUNT(r.rating) ratingcount FROM books as b LEFT JOIN reviews as r ON b.book_id = r.book_id WHERE b.book_key = (?) GROUP BY b.book_id"
       )
-      .all(`\\works\\${book_key}`)[0];
+      .all("/works/" + book_key);
     return book;
   } catch (error) {
     throw error;
