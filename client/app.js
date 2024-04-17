@@ -1,64 +1,89 @@
-// Wait for the DOM content to be fully loaded
-document.addEventListener("DOMContentLoaded", function () {
-  // Find the search button element
-  const searchButton = document.getElementById("searchButton");
+import * as g from "./scripts/globals.js";
+import * as r from "./scripts/routes.js";
 
-  // Attach event listener to the search button
-  searchButton.addEventListener("click", function () {
-    searchBooks();
+async function appStart() {
+  g.loadSettings();
+  await r.getUser();
+  await r.getAllGenres();
+  addGenres();
+  document
+    .getElementById("searchButton")
+    .addEventListener("click", function () {
+      searchOLBooks();
+    });
+    await r.getBookSearch("")
+    console.log(g.getBooks())
+    addBooks()
+}
+
+function addGenres() {
+  const genreElement = document.getElementById("categoryFilter");
+  genreElement.innerHTML = "";
+  const optionElement = document.createElement("option");
+  optionElement.value = "";
+  optionElement.textContent = "All Categories";
+  genreElement.appendChild(optionElement);
+  g.getGenres().forEach((x) => {
+    const optionElement = document.createElement("option");
+    optionElement.value = x;
+    optionElement.textContent = x;
+    genreElement.appendChild(optionElement);
   });
-});
+}
 
-async function searchBooks() {
+async function searchOLBooks() {
   const searchInput = document.getElementById("searchInput").value;
   const categoryFilter = document.getElementById("categoryFilter").value;
+
+  // Construct URL with category filter
+  let apiUrl = `${g.ol_search}${searchInput}${g.ol_Fields}`;
+  if (categoryFilter) {
+    apiUrl += `&subject=${categoryFilter}`;
+  }
+  // Fetch data from Open Library API
+  const response = await fetch(apiUrl);
+  await response.json().then((data) => {
+    const newBooks = data.docs.map((x) => ({
+      book_key: x.key,
+      title: x.title,
+      author: x.author_name || [],
+      imglink: x.cover_i || "",
+      // imglink: `${g.ol_cover}${x.cover_i}-M.jpg` || "",
+      year: x.first_publish_year || "",
+    }));
+    newBooks.forEach((x) => {
+      if (x.author.length == 0) {
+        x.author = "Unknown Author";
+      } else {
+        x.author = x.author[0];
+      }
+      if (x.imglink != "") {
+        x.imglink =`${g.ol_cover}${x.imglink}-M.jpg`
+      }
+    });
+    g.setBooks(newBooks);
+    addBooks();
+  });
+}
+function addBooks() {
   const searchResults = document.getElementById("searchResults");
 
   // Clear previous search results
   searchResults.innerHTML = "";
 
-  // Construct URL with category filter
-  let apiUrl = `http://openlibrary.org/search.json?title=${searchInput}`;
-  if (categoryFilter) {
-    apiUrl += `&subject=${categoryFilter}`;
-  }
+  g.getBooks().forEach((book) => {
+    const title = book.title;
+    const authors = book.author;
+    const coverUrl = book.imglink;
+    const details = book.year || "";
+    console.log(book.imglink);
+    const bookElement = document.createElement("div");
+    bookElement.addEventListener("click", (e) => {
+      window.location.href = `book/index.html?key=${book.book_key}&author=${book.author}`;
+    });
 
-  // Fetch data from Open Library API
-  const response = await fetch(apiUrl + "&sort=rating");
-  const data = await response.json().then((data) => {
-    addBooks(data)
-  });
-
-  // Display search results
-
-
-
-
-  //     // Get all book elements
-  // const books = document.querySelectorAll('.book');
-
-  // // Attach click event listener to each book
-  // books.forEach(book => {
-
-  //     });
-  // });
-}
-  function addBooks(books){
-    books.docs.forEach((book) => {
-        const title = book.title;
-        const authors = book.author_name
-          ? book.author_name.join(", ")
-          : "Unknown Author";
-        const coverUrl = `http://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`;
-        const details = book.publish_date ? `Published: ${book.publish_date[0]}` : "";
-        console.log(book.key);
-        const bookElement = document.createElement("div");
-        bookElement.addEventListener("click", (e) => {
-          window.location.href = `book/index.html?key=${book.key}`;
-        });
-        
-        bookElement.classList.add("book");
-        bookElement.innerHTML = `
+    bookElement.classList.add("book");
+    bookElement.innerHTML = `
                 <img src="${coverUrl}" alt="${title} cover">
                 <div class="book-details">
                     <h2>${title}</h2>
@@ -66,6 +91,8 @@ async function searchBooks() {
                     <p>${details}</p>
                 </div>
             `;
-        searchResults.appendChild(bookElement);
-      });
-  }
+    searchResults.appendChild(bookElement);
+  });
+}
+
+appStart();

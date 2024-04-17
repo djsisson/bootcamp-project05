@@ -117,11 +117,7 @@ async function getBookByKey(bookkey) {
 
 async function getBookSearch(search) {
   try {
-    const response = await fetch(`${g.db}books/search/`, {
-      method: "GET",
-      body: JSON.stringify(search),
-      headers: { "Content-Type": "application/json" },
-    });
+    const response = await fetch(`${g.db}books/search/?search=${search}`);
     if (response.status == 200) {
       const books = await response.json();
       g.setBooks(books);
