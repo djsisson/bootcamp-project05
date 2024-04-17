@@ -147,7 +147,7 @@ app.get("/books/genre/:genreid(\\d+)", (req, res) => {
 //not needed
 app.get("/books/search/", (req, res) => {
   try {
-    const result = query.getBooksBySearch(req.body.search,0);
+    const result = query.getBooksBySearch(req.query.search);
     res.status(200).send(result);
   } catch (error) {
     console.log(error)
