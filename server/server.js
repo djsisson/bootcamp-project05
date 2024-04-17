@@ -61,7 +61,7 @@ app.put("/users/:userid(\\d+)", (req, res) => {
     if (result.changes == 0) {
       res.status(400).send();
     } else {
-      res.status(200).json(userid);
+      res.status(200).json(req.body);
     }
   } catch (error) {
     res.status(400).send();
@@ -97,7 +97,7 @@ app.put("/books/:bookid(\\d+)", (req, res) => {
     if (result.changes == 0) {
       res.status(400).send();
     } else {
-      res.status(200).json(bookid);
+      res.status(200).json(req.body);
     }
   } catch (error) {
     res.status(400).send();
@@ -117,7 +117,7 @@ app.get("/books/:bookid(\\d+)", (req, res) => {
   }
 });
 
-app.get("/books/key/:bookkey", (req, res) => {
+app.get("/books/works/:bookkey", (req, res) => {
   try {
     const result = query.getBookByKey(req.params.bookkey);
     if (result.length == 0) {
@@ -184,7 +184,7 @@ app.put("/review/:reviewid(\\d+)", (req, res) => {
     if (result.changes == 0) {
       res.status(400).send();
     } else {
-      res.status(200).json(reviewid);
+      res.status(200).json(req.body);
     }
   } catch (error) {
     console.log(error)
@@ -195,17 +195,14 @@ app.put("/review/:reviewid(\\d+)", (req, res) => {
 app.get("/review/:bookid(\\d+)", (req, res) => {
   try {
     const result = query.getReviews(req.params.bookid);
-    if (result.length == 0) {
-      res.status(400).send();
-    } else {
-      res.status(200).send(result);
-    }
+    res.status(200).send(result);
   } catch (error) {
+    console.log(error)
     res.status(400).send();
   }
 });
 
-app.post("/favourite/new/:userid(\\d+)/:bookid(\\d+)", (req, res) => {
+app.post("/favourite/:userid(\\d+)/:bookid(\\d+)", (req, res) => {
   try {
     res
       .status(200)
@@ -215,9 +212,9 @@ app.post("/favourite/new/:userid(\\d+)/:bookid(\\d+)", (req, res) => {
   }
 });
 
-app.delete("/favourite/:favouriteid(\\d+)", (req, res) => {
+app.delete("/favourite/:userid(\\d+)/:bookid(\\d+)", (req, res) => {
   try {
-    const result = query.removeFavourite(req.params.favouriteid);
+    const result = query.removeFavourite(req.params.userid, req.params.bookid);
     if (result.changes == 0) {
       res.status(400).send();
     } else {

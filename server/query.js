@@ -125,13 +125,13 @@ function deleteBook(book_id) {
 }
 
 function getBookByKey(book_key) {
-  console.log(book_key)
+  console.log(book_key);
   try {
     const book = db
       .prepare(
         "SELECT b.*, round(avg(r.rating), 2) rating, COUNT(r.rating) ratingcount FROM books as b LEFT JOIN reviews as r ON b.book_id = r.book_id WHERE b.book_key = (?) GROUP BY b.book_id"
       )
-      .all(book_key)[0];
+      .all(`\\works\\${book_key}`)[0];
     return book;
   } catch (error) {
     throw error;
@@ -156,7 +156,7 @@ function getBooksByGenre(genre_id) {
   try {
     const books = db
       .prepare(
-        "SELECT b.*, round(avg(r.rating), 2) rating, COUNT(r.rating) ratingcount FROM books as b LEFT JOIN reviews as r ON b.book_id = r.book_id WHERE genre_id = (?) GROUP BY b.book_id ORDER BY b.title ASC"
+        "SELECT b.*, round(avg(r.rating), 2) rating, COUNT(r.rating) ratingcount FROM books as b LEFT JOIN reviews as r ON b.book_id = r.book_id WHERE genre_id = (?) GROUP BY b.book_id ORDER BY r.rating DESC"
       )
       .all(genre_id);
     return books;
@@ -165,12 +165,13 @@ function getBooksByGenre(genre_id) {
   }
 }
 //not needed
-function getBooksBySearch(search,) {
+function getBooksBySearch(search) {
   try {
-    const books = db.prepare(
-      "SELECT b.*, round(avg(r.rating), 2) rating, COUNT(r.rating) ratingcount FROM books as b LEFT JOIN reviews as r ON b.book_id = r.book_id WHERE title LIKE (?) OR author LIKE (?) GROUP BY b.book_id ORDER BY b.title ASC"
-    );
-    db.all(`%${search}%`, `%${search}%`);
+    const books = db
+      .prepare(
+        "SELECT b.*, round(avg(r.rating), 2) rating, COUNT(r.rating) ratingcount FROM books as b LEFT JOIN reviews as r ON b.book_id = r.book_id WHERE title LIKE (?) OR author LIKE (?) GROUP BY b.book_id ORDER BY r.rating DESC"
+      )
+      .all(`%${search}%`, `%${search}%`);
     return books;
   } catch (error) {
     console.log(error);
@@ -232,7 +233,9 @@ function deleteReview(review_id) {
 function getReviews(book_id) {
   try {
     const reviews = db
-      .prepare("SELECT * FROM reviews WHERE book_id = (?)")
+      .prepare(
+        "SELECT r.*, u.name AS user FROM reviews as r LEFT JOIN users AS u ON r.user_id = u.user_id WHERE book_id = (?) ORDER BY r.rating DESC"
+      )
       .all(book_id);
     return reviews;
   } catch (error) {
@@ -259,14 +262,14 @@ function addFavourite(user_id, book_id) {
   }
 }
 
-function removeFavourite(favourite_id) {
+function removeFavourite(user_id, book_id) {
   const favourite = db.prepare(
-    "DELETE FROM favourites WHERE fav_id = (?)"
+    "DELETE FROM favourites WHERE user_id = (?) AND book_id = (?)"
   );
   try {
     const trans = db
       .transaction(() => {
-        const test = favourite.run(favourite_id);
+        const test = favourite.run(user_id, book_id);
         return test;
       })
       .apply();
