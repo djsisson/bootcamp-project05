@@ -23,8 +23,10 @@ async function getAllGenres() {
 }
 
 async function getUser() {
+  console.log(g.getUser())
+  if (g.getUser().user_id==0) return
   try {
-    const response = await fetch(`${g.db}users/${g.getUser().id}`);
+    const response = await fetch(`${g.db}users/${g.getUser().user_id}`);
     if (response.status == 200) {
       const currentUser = await response.json();
       g.setUser(currentUser);

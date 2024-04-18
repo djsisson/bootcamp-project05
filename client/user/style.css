@@ -221,3 +221,11 @@ button:hover {
   left: 50%;
   transform: translateX(-50%);
 }
+
+.loggedIn{
+  display: none;
+}
+
+.notLoggedIn{
+  display: none;
+}
