@@ -183,3 +183,15 @@ button:hover {
 .hidden {
   display: none;
 }
+
+.notloggedin{
+  display: none;
+}
+
+.addreviewForm{
+  display: none;
+}
+
+.reviewtext{
+  resize:none
+}
