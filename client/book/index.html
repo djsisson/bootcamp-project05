@@ -9,6 +9,16 @@
     <script type="module" src="./app.js" defer></script>
 </head>
 <body>
+    <header class="container-header">
+        <h1>Bootcamp Book Club</h1>
+        <div class="avatar">
+          <div class="user-icon">
+            <a href="../user/"
+              ><img src="../user-icon.png" alt="User Icon"
+            /></a>
+          </div>
+        </div>
+      </header>
     <div class="container">
         <h1>Book Details</h1>
         <div id="bookDetails">
@@ -18,7 +28,7 @@
     <div class="container">
         
         <div id="addReview">
-            <div class="notloggedin">Log In To Add A Review</div>
+            <div class="notloggedin"><a href="../user/">Log In</a>  To Add A Review</div>
             <form action="" class="addreviewForm">
                 <h1>Add Review</h1>
                 <textarea name="reviewtext" id="" cols="60" rows="10" class="reviewtext"></textarea>

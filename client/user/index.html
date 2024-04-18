@@ -8,10 +8,16 @@
     <script type="module" src="../scripts/globals.js" defer></script>
     <script type="module" src="../scripts/routes.js" defer></script>
     <script type="module" src="./app.js" defer></script>
-    <script src="user-page.js" defer></script>
   </head>
   <header class="container">
     <h1>User Profile</h1>
+    <div class="avatar">
+      <div class="user-icon">
+        <a href="../"
+          ><img class="homeicon" src="../home.png" alt="User Icon"
+        /></a>
+      </div>
+    </div>
   </header>
   <body>
     <div class="container1">
@@ -41,10 +47,8 @@
             </div>
           </div>
         </form>
-        <img src="profile-picture.jpg" alt="Profile Picture" />
         <h2>Favourite Books</h2>
         <div id="favoriteBooks" class="grid-container"></div>
-        <button id="addFavorite">Add Favorite</button>
         <h2>Comments</h2>
         <div id="comments" class="grid-container"></div>
         <h2>Currently Reading</h2>
