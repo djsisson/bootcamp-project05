@@ -224,8 +224,11 @@ button:hover {
 
 .loggedIn{
   display: none;
+  gap: 1rem
 }
 
 .notLoggedIn{
   display: none;
+  flex-direction: column;
+  gap: 1rem
 }
