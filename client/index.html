@@ -6,37 +6,19 @@
     <script type="module" src="./scripts/globals.js" defer></script>
     <script type="module" src="./scripts/routes.js"></script>
     <script src="./app.js" type="module" defer></script>
-    <title>Book Club</title>
+    <title>Bootcamp Book Club</title>
     <link rel="stylesheet" href="assets/style.css" />
   </head>
   <body>
-    <header class="header">
-      <div class="container">
+    <header class="container">
         <h1>Bootcamp Book Club</h1>
         <div class="avatar">
           <div class="user-icon">
-            <a href="user/index.html"
-              ><img src="user-icon.png" alt="User Icon"
-            /></a>
+            <a href="user/index.html"><img src="user-icon.png" alt="User Icon"/></a>
           </div>
         </div>
-      </div>
-      <div class="wrapper">
-        <nav class="nav-bar">
-          <a href="#fiction">Fiction books</a>
-          <a href="#nonfiction">Non-Fiction books</a>
-          <a href="#autobiography">Autobiography books</a>
-          <a href="#biography">Biography books</a>
-          <a href="#comedy">Comedy books</a>
-          <a href="#drama">Drama books</a>
-        </nav>
-      </div>
-      <div class="container1">
-        <input
-          type="text"
-          id="searchInput"
-          placeholder="Search for a book..."
-        />
+        <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search for a book..."/>
         <select id="categoryFilter">
           <option value="">All Categories</option>
           <option value="fiction">Fiction</option>
@@ -55,8 +37,18 @@
         <button id="searchButton">Search</button>
       </div>
     </header>
+    <div class="wrapper">
+      <nav class="nav-bar">
+        <a href="#fiction">Fiction books</a>
+        <a href="#nonfiction">Non-Fiction books</a>
+        <a href="#autobiography">Autobiography books</a>
+        <a href="#biography">Biography books</a>
+        <a href="#comedy">Comedy books</a>
+        <a href="#drama">Drama books</a>
+      </nav>
+    </div>
 
-    <main id="searchResults" class="container2">
+    <main id="searchResults" class="container">
       <div class="book">
         <a href="book/index.html?key=works${book.key}">
           <!-- Search results will be displayed here -->
