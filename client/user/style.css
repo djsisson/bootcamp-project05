@@ -5,16 +5,6 @@ body {
   background-color: #f4f3dc;
 }
 
-.container {
-  width: 80%;
-  margin: 0 auto;
-  padding: 20px;
-  /* background-color: rgba(255, 255, 255, 0.8); 
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 20px; */
-}
-
 .search-container {
   display: flex;
   align-items: center;
@@ -171,8 +161,15 @@ button:hover {
 }
 
 .user-profile {
-  text-align: center;
-  margin-bottom: 20px;
+  align-items: center;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+
+  justify-content: center;
+  position: relative;
+  height: auto;
 }
 
 .user-profile img {
@@ -180,11 +177,14 @@ button:hover {
   border-radius: 50%;
 }
 .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  height: 100vh;
+  background-image: url("https://images.unsplash.com/photo-1712983444418-f6ef5e04b0af?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  margin: 0;
+  padding: 30px;
+  margin-bottom: 20px;
 }
 
 .user-profile {
