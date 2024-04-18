@@ -66,7 +66,9 @@ function formSetup() {
 function isLoggedIn() {
   if (g.getUser().user_id == 0) {
     document.querySelector(".notloggedin").style.display = "block";
+    document.querySelector(".addreviewForm").style.display = "none";
   } else {
+    document.querySelector(".notloggedin").style.display = "none";
     document.querySelector(".addreviewForm").style.display = "block";
   }
 }
