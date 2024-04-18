@@ -13,18 +13,14 @@
         <h1>Book Details</h1>
         <div class="avatar">
             <div class="home-icon">
-                <a href="../"
-                  ><img class="homeicon" src="../home.png" alt="User Icon"
-                /></a>
-              </div>
-          <div class="user-icon">
-            <a href="../user/"
-              ><img src="../user-icon.png" alt="User Icon"
-            /></a>
-          </div>
+                <a href="../"><img class="homeicon" src="../home.png" alt="User Icon"></a>
+            </div>
+            <div class="user-icon">
+                <a href="../user/"><img src="../user-icon.png" alt="User Icon"></a>
+            </div>
         </div>
-      </header>
-      <main>
+    </header>
+    <main>
     <div class="container">
         <div id="bookDetails">
             <!-- Book details will be displayed here -->
@@ -35,21 +31,27 @@
         <div id="addReview">
             <div class="notloggedin"><a href="../user/">Log In</a>  To Add A Review</div>
             <form action="" class="addreviewForm">
-                <h1>Add Review</h1>
+                <h2>Add Review</h2>
                 <textarea name="reviewtext" id="" cols="60" rows="10" class="reviewtext"></textarea>
-                <div class="inputRating">
-                <label for="radioinputRating1">☆</label><input value="1" class="radioRating" type="radio" name="radioinputRating" id="radioinputRating1" checked="true">
-                <label for="radioinputRating2">☆</label><input value="2" class="radioRating" type="radio" name="radioinputRating" id="radioinputRating2">
-                <label for="radioinputRating3">☆</label><input value="3" class="radioRating" type="radio" name="radioinputRating" id="radioinputRating3">
-                <label for="radioinputRating4">☆</label><input value="4" class="radioRating" type="radio" name="radioinputRating" id="radioinputRating4">
-                <label for="radioinputRating5">☆</label><input value="5" class="radioRating" type="radio" name="radioinputRating" id="radioinputRating5"></div>
+                    <div class="rate">
+                        <input type="radio" id="radioinputRating5" name="radioinputRating" value="5" class="radioRating"/>
+                        <label for="radioinputRating5"></label>
+                        <input type="radio" id="radioinputRating4" name="radioinputRating" value="4" class="radioRating"/>
+                        <label for="radioinputRating4"></label>
+                        <input type="radio" id="radioinputRating3" name="radioinputRating" value="3" class="radioRating"/>
+                        <label for="radioinputRating3"></label>
+                        <input type="radio" id="radioinputRating2" name="radioinputRating" value="2" class="radioRating"/>
+                        <label for="radioinputRating2"></label>
+                        <input type="radio" id="radioinputRating1" name="radioinputRating" value="1" class="radioRating"/>
+                        <label for="radioinputRating1"></label>
+                      </div>
                 <button class="submitreview">Add a Review</button>
                 <button class="deletereview">Delete Review</button>
             </form>
         </div>
     </div>
     <div class="container">
-        <h1>Book Reviews</h1>
+        <h2>Book Reviews</h2>
         <div id="bookReviews">
             <!-- Book Reviews will be displayed here -->
         </div>
