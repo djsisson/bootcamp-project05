@@ -123,15 +123,28 @@ async function loadReviews() {
   const bookDetailsContainer = document.getElementById("bookReviews");
   const curReviews = g.getReviews();
   bookDetailsContainer.innerHTML = "";
+  
+  // Create a div for grid layout
+  const reviewGrid = document.createElement("div");
+  reviewGrid.classList.add("review-grid");
+  
+  curReviews.forEach((review) => {
+    const newReview = document.createElement("div");
+    newReview.classList.add("review-card");
+    newReview.innerHTML = `
+        <h2 class="review-username">${review.user}</h2>
+        <p class="review-rating">Rating: ${review.rating} star</p>
+        <div class="review-content">${review.review}</div>
+    `;
+    reviewGrid.appendChild(newReview);
+  });
+
+  bookDetailsContainer.appendChild(reviewGrid);
+
+  // Additional functionalities from the new version
   document.querySelector(".submitreview").textContent = "Add Review";
   document.querySelector(".deletereview").style.display = "none";
   curReviews.forEach((review) => {
-    const newReview = document.createElement("div");
-    newReview.innerHTML = `
-                <h2>${review.user}</h2>
-                <p>Rating: ${review.rating}</p>
-                <div>${review.review}</div>
-    `;
     if (review.user_id == g.getUser().user_id) {
       const formReview = document.querySelector(".addreviewForm");
       formReview.reviewtext.value = review.review;
@@ -146,9 +159,9 @@ async function loadReviews() {
         rating: review.rating,
       });
     }
-    bookDetailsContainer.appendChild(newReview);
   });
 }
+
 
 function parseParamsKey() {
   const urlParams = new URLSearchParams(window.location.search);
