@@ -6,23 +6,20 @@
     <script type="module" src="./scripts/globals.js" defer></script>
     <script type="module" src="./scripts/routes.js"></script>
     <script src="./app.js" type="module" defer></script>
-    <title>Book Club</title>
+    <title>Bootcamp Book Club</title>
     <link rel="stylesheet" href="assets/style.css" />
   </head>
   <body>
-    <header class="header">
-      <div class="container">
-        <h1>Bootcamp Book Club</h1>
-        <div class="avatar">
-          <div class="user-icon">
-            <a href="user/index.html"
-              ><img src="user-icon.png" alt="User Icon"
-            /></a>
-          </div>
+    <header class="container">
+      <h1>Bootcamp Book Club</h1>
+      <div class="avatar">
+        <div class="user-icon">
+          <a href="user/index.html"
+            ><img src="user-icon.png" alt="User Icon"
+          /></a>
         </div>
       </div>
-
-      <div class="container1">
+      <div class="search-container">
         <input
           type="text"
           id="searchInput"
@@ -56,7 +53,8 @@
         <a href="#drama">Drama books</a>
       </nav>
     </div>
-    <main id="searchResults" class="container2">
+
+    <main id="searchResults" class="container">
       <div class="book">
         <a href="book/index.html?key=works${book.key}">
           <!-- Search results will be displayed here -->

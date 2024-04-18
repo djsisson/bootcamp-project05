@@ -83,10 +83,10 @@ body {
   justify-content: center;
 }
 
-.search-container1 {
+.search-container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
   margin-bottom: 20px;
 }
 
@@ -105,12 +105,11 @@ select {
   padding: 5px;
   box-sizing: border-box;
   border-radius: 10px;
-  justify-items: center;
 }
 
 button {
-  width: 150px;
   height: 40px;
+  width: calc(20% - 10%);
   padding: 5px 20px;
   border-radius: 15px;
   background-color: #0083e7;
