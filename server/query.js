@@ -85,7 +85,9 @@ function addBook(book) {
       })
       .apply();
     return db
-      .prepare("SELECT b.*, round(avg(r.rating), 2) rating, COUNT(r.rating) ratingcount FROM books as b LEFT JOIN reviews as r ON b.book_id = r.book_id WHERE b.book_id = (?) GROUP BY b.book_id")
+      .prepare(
+        "SELECT b.*, round(avg(r.rating), 2) rating, COUNT(r.rating) ratingcount FROM books as b LEFT JOIN reviews as r ON b.book_id = r.book_id WHERE b.book_id = (?) GROUP BY b.book_id"
+      )
       .all(trans.lastInsertRowid)[0];
   } catch (error) {
     throw error;
@@ -180,7 +182,7 @@ function getBooksBySearch(search) {
 
 function addReview(review) {
   const newReview = db.prepare(
-    `INSERT INTO reviews (user_id, book_id, review, rating) VALUES (@userid, @bookid, @review, @rating)`
+    `INSERT INTO reviews (user_id, book_id, review, rating) VALUES (@user_id, @book_id, @review, @rating)`
   );
   try {
     const trans = db
@@ -190,7 +192,9 @@ function addReview(review) {
       })
       .apply();
     return db
-      .prepare("SELECT * FROM reviews where book_id = (?)")
+      .prepare(
+        "SELECT r.*, u.name AS user FROM reviews as r LEFT JOIN users AS u ON r.user_id = u.user_id WHERE book_id = (?) ORDER BY r.rating DESC"
+      )
       .all(review.book_id);
   } catch (error) {
     throw error;

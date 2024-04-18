@@ -76,7 +76,7 @@ function addBooks() {
     const details = book.year || "";
     const bookElement = document.createElement("div");
     bookElement.addEventListener("click", (e) => {
-      window.location.href = `book/index.html?key=${book.book_key}&author=${book.author}`;
+      window.location.href = `book/?key=${book.book_key}&author=${book.author}&img=${book.imglink}`;
     });
 
     bookElement.classList.add("book");
