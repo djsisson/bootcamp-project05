@@ -64,7 +64,7 @@ function formSetup() {
 }
 
 function isLoggedIn() {
-  if (g.getUser().id == 0) {
+  if (g.getUser().user_id == 0) {
     document.querySelector(".notloggedin").style.display = "block";
   } else {
     document.querySelector(".addreviewForm").style.display = "block";
@@ -173,11 +173,7 @@ function parseParamsImg() {
 
 appStart();
 
-//todo
 
-//display all reviews for book from database
-//if user is logged in allow editing summary
-//if user has posted a comment show their comment and rating in fields at top
-//STRETCH show update or delete option
-//otherwise leave them blank and allow to be added
-//STRETCH if user is logged in show add to favourite button
+//todo
+//allow edit of book info
+//add add to watch list

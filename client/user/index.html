@@ -1,25 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>User Profile</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./style.css" />
+    <script type="module" src="../scripts/globals.js" defer></script>
+    <script type="module" src="../scripts/routes.js" defer></script>
+    <script type="module" src="./app.js" defer></script>
+    <script src="user-page.js" defer></script>
+  </head>
+  <body>
     <div class="container">
-        <div class="user-profile">
-            <h1>User Profile</h1>
-            <img src="profile-picture.jpg" alt="Profile Picture">
-            <h2>Favourite Books</h2>
-            <div id="favoriteBooks" class="grid-container"></div>
-            <button id="addFavorite">Add Favorite</button>
-            <h2>Comments</h2>
-            <div id="comments" class="grid-container"></div>
-            <h2>Currently Reading</h2>
-            <div id="currentlyReading" class="grid-container"></div>
-        </div>
+      <div class="user-profile">
+        <h1>User Profile</h1>
+        <form action="" class="userProfile">
+          <div class="loggedIn">
+            <input name="updateuserName" type="text" class="updateuserName" />
+            <button class="updateProfile">Update Profile</button
+            ><button class="logout">Logout</button>
+          </div>
+          <div class="notLoggedIn">
+            <input name="userName" type="text" class="userName" />
+            <button class="newProfile">New Profile</button>
+            <input type="text" pattern="^[0-9]+$" class="switchId" name = "switchId" />
+            <button class="switchProfile">Login</button>
+          </div>
+        </form>
+        <img src="profile-picture.jpg" alt="Profile Picture" />
+        <h2>Favourite Books</h2>
+        <div id="favoriteBooks" class="grid-container"></div>
+        <button id="addFavorite">Add Favorite</button>
+        <h2>Comments</h2>
+        <div id="comments" class="grid-container"></div>
+        <h2>Currently Reading</h2>
+        <div id="currentlyReading" class="grid-container"></div>
+      </div>
     </div>
-    <script src="user-page.js"></script>
-</body>
+  </body>
 </html>
