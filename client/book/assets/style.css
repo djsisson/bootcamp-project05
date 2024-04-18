@@ -184,14 +184,47 @@ button:hover {
   display: none;
 }
 
-.notloggedin{
-  display: none;
+.review-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust grid layout as needed */
+  gap: 16px; /* Set gap between cards */
+  align-items: stretch; /* Stretch items to match the height of the tallest item */
 }
 
-.addreviewForm{
-  display: none;
+.review-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  background-color: #fff;
+  display: flex; /* Use flexbox */
+  flex-direction: column;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.reviewtext{
-  resize:none
+.review-card h2 {
+  margin-bottom: 8px;
+}
+
+.review-card p {
+  margin: 4px 0;
+}
+
+.review-card-content {
+  flex-grow: 1; /* Allow content to expand */
+  overflow: auto; /* Add scrollbar for overflow content */
+}
+
+.review-card div {
+  flex-grow: 1; /* Allow content to expand */
+  overflow: auto; /* Add scrollbar for overflow content */
+}
+
+.review-rating {
+  margin-top: auto;
+  margin-bottom: 0px;
+}
+
+.review-content{
+  /*Any added styling*/
+  margin-top: 10px;
 }
