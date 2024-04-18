@@ -3,7 +3,7 @@
   background-color: antiquewhite;
 }
 
-@media (max-width: 750px) {
+@media all and (max-width: 750px) {
   body {
     font-size: 18px;
     text-align: center;
@@ -16,6 +16,14 @@ body {
   padding: 0;
   background-color: #f4f3dc;
 }
+
+header {
+  background-image: url("https://images.unsplash.com/photo-1712983444418-f6ef5e04b0af?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
 .container h1 {
   color: rgb(86, 15, 15);
   font-size: 2rem;
@@ -23,21 +31,25 @@ body {
   position: relative;
 }
 
-.wrapper {
+.wrapper .nav-bar {
   display: flex;
   flex-direction: column;
-  align-items: center;
-
   padding: 15px;
-  background-color: darkgreen;
+  position: absolute;
+  min-width: 20%;
+  min-height: 100%;
+  border: solid;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  font-weight: bold;
+  font-size: 1.5rem;
 }
-
 .wrapper .nav-bar a {
-  color: white;
   font-family: Arial, Helvetica, sans-serif;
   text-decoration: none;
   text-transform: capitalize;
-  margin: 10px;
+  display: flex;
+  justify-content: space-evenly;
 }
 body {
   font-family: Arial, sans-serif;
@@ -47,30 +59,28 @@ body {
 }
 
 .container {
-  width: 80%;
-  margin: 0 auto;
-  padding: 10px;
-  /* background-color: rgba(255, 255, 255, 0.8); 
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 20px; */
-  display: grid;
-  grid-template-rows: auto;
-  margin-bottom: 10px;
-  align-items: center;
-}
-
-.container1 {
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
   padding: 20px;
   /* background-color: rgba(255, 255, 255, 0.8); 
     padding: 20px;
     border-radius: 10px;
     margin-bottom: 20px; */
+  /* display: grid;
+  grid-template-rows: auto; */
+  /* margin-bottom: 10px; */
+  /* align-items: center; */
+  border-bottom: solid;
+}
+
+.container1 {
+  width: 100%;
+  margin: 0 auto;
+  padding: 25px;
+  padding: 20px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .search-container1 {
@@ -80,9 +90,16 @@ body {
   margin-bottom: 20px;
 }
 
+main {
+  width: 50%;
+  display: flex;
+  float: right;
+  right: 20px;
+}
+
 input[type="text"],
 select {
-  width: calc(70% - 10px);
+  width: calc(40% - 10px);
   height: 40px;
   margin-bottom: 10px;
   padding: 5px;
@@ -131,6 +148,9 @@ button:hover {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   grid-gap: 20px;
+  float: right;
+  margin-right: 100px;
+  margin-top: 20px;
 }
 #bookDetails {
   margin-bottom: 20px;
@@ -197,7 +217,8 @@ button:hover {
 /* Add styles for user icon and user page */
 .user-icon {
   float: right;
-  margin-top: -50px; /* Adjust as needed */
+  margin-top: -70px; /* Adjust as needed */
+  margin-right: 60px;
 }
 
 #userIcon {
