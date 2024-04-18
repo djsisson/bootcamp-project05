@@ -72,6 +72,7 @@ button:hover {
   height: auto;
   margin: 0 auto 10px;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .book-details {
@@ -161,3 +162,5 @@ button:hover {
 .hidden {
   display: none;
 }
+
+
