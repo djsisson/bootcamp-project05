@@ -1,8 +1,8 @@
 # bootcamp-project05
 
 Bootcamp Book Club
-Render link:
-Repo link:
+Render link: https://bootcampbookclub.onrender.com/
+Repo link: https://github.com/djsisson/bootcamp-project05
 
 Team members: Darren, Hannah, Heinry-Anselm
 
