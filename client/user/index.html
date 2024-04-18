@@ -16,18 +16,29 @@
   <body>
     <div class="container1">
       <div class="user-profile">
-        
         <form action="" class="userProfile">
           <div class="loggedIn">
-            <input name="updateuserName" type="text" class="updateuserName" />
+            <label for="updateuserName"></label
+              ><input name="updateuserName" type="text" class="updateuserName" />
             <button class="updateProfile">Update Profile</button
             ><button class="logout">Logout</button>
           </div>
           <div class="notLoggedIn">
-            <input name="userName" type="text" class="userName" />
-            <button class="newProfile">New Profile</button>
-            <input type="text" pattern="^[0-9]+$" class="switchId" name = "switchId" />
-            <button class="switchProfile">Login</button>
+            <div>
+              <input name="userName" type="text" class="userName" />
+              <button class="newProfile">New</button>
+            </div>
+            <div>
+              <label for="switchId"></label
+              ><input
+                type="text"
+                pattern="^[0-9]+$"
+                class="switchId"
+                name="switchId"
+                title="User ID"
+              />
+              <button class="switchProfile">Login</button>
+            </div>
           </div>
         </form>
         <img src="profile-picture.jpg" alt="Profile Picture" />

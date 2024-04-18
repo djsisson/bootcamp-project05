@@ -23,7 +23,6 @@ async function getAllGenres() {
 }
 
 async function getUser() {
-  console.log(g.getUser())
   if (g.getUser().user_id==0) return
   try {
     const response = await fetch(`${g.db}users/${g.getUser().user_id}`);
@@ -58,7 +57,7 @@ async function newUser() {
 
 async function deleteUser() {
   try {
-    const response = await fetch(`${g.db}users/${g.getUser().id}`, {
+    const response = await fetch(`${g.db}users/${g.getUser().user_id}`, {
       method: "DELETE",
     });
     if (response.status == 200) {
@@ -72,7 +71,7 @@ async function deleteUser() {
 
 async function updateUser() {
   try {
-    const response = await fetch(`${g.db}users/${g.getUser().id}`, {
+    const response = await fetch(`${g.db}users/${g.getUser().user_id}`, {
       method: "PUT",
       body: JSON.stringify(g.getUser()),
       headers: { "Content-Type": "application/json" },
