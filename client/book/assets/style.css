@@ -170,8 +170,6 @@ button:hover {
 .user-icon {
   float: right;
   border-radius: 50%;
-  margin-right: 190px;
-  margin-top: -60px;
 }
 
 #userIcon {
@@ -246,7 +244,6 @@ button:hover {
 .home-icon img{
   background-color: white;
   border-radius: 50%;
-  margin-left: 190px;
 }
 
 h1 {
@@ -292,4 +289,10 @@ h1 {
 .rate > input:checked ~ label:hover ~ label,
 .rate > label:hover ~ input:checked ~ label {
   color: #c59b08;
+}
+
+.avatar{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2rem;
 }
