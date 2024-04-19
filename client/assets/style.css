@@ -104,12 +104,18 @@ button:hover {
   background-color: #fff;
 }
 
+.book:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 .book img {
   width: 100px;
   height: auto;
   margin: 0 auto 10px;
   border-radius: 5px;
   cursor: pointer;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .book-details {
