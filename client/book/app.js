@@ -20,11 +20,11 @@ async function appStart() {
   document
     .querySelector(".deletereview")
     .addEventListener("click", async (e) => {
-      e.preventDefault()
-      e.stopImmediatePropagation()
+      e.preventDefault();
+      e.stopImmediatePropagation();
       await r.deleteReview().then(async (x) => {
         if (x == true) {
-          await downloadReviews()
+          await downloadReviews();
         }
       });
     });
@@ -52,12 +52,12 @@ function formSetup() {
       if (g.getCurrentReview().review_id != 0) {
         await r.updateReview().then(async (data) => {
           if (data == true) {
-            await downloadReviews()
+            await downloadReviews();
           }
         });
       } else {
         await r.addReview().then(async (data) => {
-          await downloadReviews()
+          await downloadReviews();
         });
       }
     });
@@ -90,7 +90,10 @@ async function getBookFromOL() {
       summary: data.description || "",
     };
     if (newBook.summary != "") {
-      newBook.summary = newBook.summary.value;
+      if (typeof newBook.summary === "string") {
+      } else {
+        newBook.summary = newBook.summary.value;
+      }
     } else {
       newBook.summary = "Description not available";
     }
@@ -125,11 +128,11 @@ async function loadReviews() {
   const bookDetailsContainer = document.getElementById("bookReviews");
   const curReviews = g.getReviews();
   bookDetailsContainer.innerHTML = "";
-  
+
   // Create a div for grid layout
   const reviewGrid = document.createElement("div");
   reviewGrid.classList.add("review-grid");
-  
+
   curReviews.forEach((review) => {
     const newReview = document.createElement("div");
     newReview.classList.add("review-card");
@@ -164,7 +167,6 @@ async function loadReviews() {
   });
 }
 
-
 function parseParamsKey() {
   const urlParams = new URLSearchParams(window.location.search);
   const bookKey = urlParams.get("key");
@@ -187,7 +189,6 @@ function parseParamsImg() {
 }
 
 appStart();
-
 
 //todo
 //allow edit of book info
