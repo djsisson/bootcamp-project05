@@ -1,6 +1,6 @@
 const db = import.meta.env.VITE_DATABASE_URL;
 const ol_search = "https://openlibrary.org/search.json?title=";
-const ol_Fields = "&fields=key,title,author_name,cover_i,first_publish_year&limit=20"
+const ol_Fields = "&fields=key,title,author_name,cover_i,first_publish_year&limit=20&sort=rating"
 const ol_cover = "https://covers.openlibrary.org/b/id/";
 let g_user = { user_id: 0, name: "", age: 0, email: "" };
 let g_books = [];

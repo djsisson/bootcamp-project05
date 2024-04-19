@@ -11,8 +11,13 @@ async function appStart() {
     .addEventListener("click", function (e) {
       searchOLBooks();
     });
-    await r.getBookSearch("").then((x) => (addBooks()))
-    
+  await r.getBookSearch("").then((x) => addBooks());
+  document
+    .getElementById("clearButton")
+    .addEventListener("click", async (e) => {
+      await r.getBookSearch("").then((x) => addBooks());
+    });
+  addSearchLinks();
 }
 
 function addGenres() {
@@ -30,10 +35,51 @@ function addGenres() {
   });
 }
 
-async function searchOLBooks() {
-  const searchInput = document.getElementById("searchInput").value;
-  const categoryFilter = document.getElementById("categoryFilter").value;
-  if (searchInput=="") {return}
+function addSearchLinks() {
+  document
+    .getElementById("search-bio")
+    .addEventListener("click", async (e) => {
+      await searchOLBooks("*", "autobiography");
+    });
+    document
+    .getElementById("search-scifi")
+    .addEventListener("click", async (e) => {
+      await searchOLBooks("*", "sci-fi");
+    });
+    document
+    .getElementById("search-horror")
+    .addEventListener("click", async (e) => {
+      await searchOLBooks("*", "horror");
+    });
+    document
+    .getElementById("search-romance")
+    .addEventListener("click", async (e) => {
+      await searchOLBooks("*", "romance");
+    });
+    document
+    .getElementById("search-comedy")
+    .addEventListener("click", async (e) => {
+      await searchOLBooks("*", "comedy");
+    });
+    document
+    .getElementById("search-drama")
+    .addEventListener("click", async (e) => {
+      await searchOLBooks("*", "drama");
+    });
+}
+
+async function searchOLBooks(searchvalue = "", categoryvalue = false) {
+  let searchInput = document.getElementById("searchInput").value;
+  if (searchvalue != "") {
+    searchInput = searchvalue;
+  }
+  let categoryFilter = document.getElementById("categoryFilter").value;
+  if (categoryvalue) {
+    categoryFilter = categoryvalue;
+  }
+  if (searchInput == "") {
+    return;
+  }
   // Construct URL with category filter
   let apiUrl = `${g.ol_search}${searchInput}${g.ol_Fields}`;
   if (categoryFilter) {
@@ -56,7 +102,7 @@ async function searchOLBooks() {
         x.author = x.author[0];
       }
       if (x.imglink != "") {
-        x.imglink =`${g.ol_cover}${x.imglink}-M.jpg`
+        x.imglink = `${g.ol_cover}${x.imglink}-M.jpg`;
       }
     });
     g.setBooks(newBooks);
@@ -70,7 +116,7 @@ function addBooks() {
   searchResults.innerHTML = "";
 
   g.getBooks().forEach((book) => {
-    if (book.imglink == "") return
+    if (book.imglink == "") return;
     const title = book.title;
     const authors = book.author;
     const coverUrl = book.imglink;
