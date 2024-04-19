@@ -70,6 +70,7 @@ function addBooks() {
   searchResults.innerHTML = "";
 
   g.getBooks().forEach((book) => {
+    if (book.imglink == "") return
     const title = book.title;
     const authors = book.author;
     const coverUrl = book.imglink;
